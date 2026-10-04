@@ -1,0 +1,61 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="800"
+  viewBox="0 0 1200 800"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">911 Simulator — dispatch signal</title>
+  <desc id="desc">
+    Original schematic placeholder illustration of an abstract dispatch signal,
+    concentric scan rings, and incident markers. Not an actual interface, game
+    screenshot, or final logo.
+  </desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1">
+      <stop stop-color="#102532" />
+      <stop offset="1" stop-color="#08121c" />
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#70b9db" stroke-opacity=".08" />
+    </pattern>
+  </defs>
+  <path d="M0 0h1200v800H0z" fill="url(#bg)" />
+  <path d="M0 0h1200v800H0z" fill="url(#grid)" />
+  <g fill="none" stroke="#6bb5ce">
+    <circle cx="600" cy="390" r="100" opacity=".5" />
+    <circle cx="600" cy="390" r="185" opacity=".28" />
+    <circle cx="600" cy="390" r="270" opacity=".16" />
+    <path d="M290 390h620M600 100v580" opacity=".15" />
+    <path
+      d="M600 390l200-150a250 250 0 0 1 49 108Z"
+      fill="#6bb5ce"
+      fill-opacity=".07"
+      stroke-opacity=".3"
+    />
+  </g>
+  <path
+    d="M130 425h135l26-38 30 78 34-131 40 101h119l33-59 40 104 37-184 42 129h194l24-41 30 73 32-32h97"
+    fill="none"
+    stroke="#f2ac73"
+    stroke-width="4"
+    stroke-linejoin="round"
+  />
+  <g fill="#0b1c28" stroke="#e99176" stroke-width="2">
+    <path d="m430 212 13 23-13 23-13-23z" />
+    <path d="m802 260 13 23-13 23-13-23z" />
+    <path d="m755 540 13 23-13 23-13-23z" />
+  </g>
+  <g font-family="monospace" font-size="13" letter-spacing="2" fill="#91aeba">
+    <text x="455" y="240">SIGNAL / A</text>
+    <text x="827" y="288">SIGNAL / B</text>
+    <text x="780" y="568">SIGNAL / C</text>
+  </g>
+  <g font-family="monospace" font-size="15" letter-spacing="3">
+    <text x="55" y="65" fill="#a1c6d7">SIGNAL FOUNDRY / 911 SIMULATOR</text>
+    <text x="55" y="745" fill="#d2a48a">
+      SCHEMATIC ILLUSTRATION · NOT GAMEPLAY
+    </text>
+  </g>
+</svg>

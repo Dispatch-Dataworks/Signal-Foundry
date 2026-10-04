@@ -1,0 +1,92 @@
+---
+import { site, feedbackHref } from '../config';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  structuredData?: Record<string, unknown>;
+}
+const { title, description = site.description, image = site.defaultSocialImage, noindex = false, structuredData } = Astro.props;
+const pageTitle = title ? `${title} — ${site.title}` : site.title;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const socialImage = new URL(image, site.url).href;
+const pathname = Astro.url.pathname;
+const schema = structuredData ?? {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.title,
+  url: site.url,
+  description: site.description,
+  email: site.email,
+  parentOrganization: { '@type': 'Organization', name: site.parent.name, url: site.parent.url },
+};
+const json = JSON.stringify(schema).replace(/</g, '\\u003c');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1114" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content={description} />
+    <meta name="ga-id" content={site.analytics.enabled ? site.analytics.measurementId : ''} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={structuredData?.['@type'] === 'BlogPosting' ? 'article' : 'website'} />
+    <meta property="og:site_name" content={site.title} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content={title ?? site.title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <title>{pageTitle}</title>
+    <script type="application/ld+json" set:html={json} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label={`${site.title} home`}>
+          {site.branding.logo ? <img class="brand-logo" src={site.branding.logo} alt="" width="36" height="36" /> : <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>}
+          <span class="brand-name">SIGNAL FOUNDRY<span>GAMES & EXPERIMENTS</span></span>
+        </a>
+        <nav aria-label="Main navigation">
+          {site.navigation.map((item) => <a href={item.href} aria-current={(item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)) ? 'page' : undefined}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"><slot /></main>
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <div><a class="footer-wordmark" href="/">{site.title}</a><p>{site.footer.note}</p></div>
+        <a class="text-link" data-track="feedback" href={feedbackHref()}>{site.footer.feedbackLabel} <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="container footer-bottom">
+        <p>© {new Date().getUTCFullYear()} {site.title}. {site.parent.relationship} <a href={site.parent.url}>{site.parent.name}</a>.</p>
+        <div class="footer-links">
+          {site.socials.map((social) => <a href={social.href}>{social.label}</a>)}
+          <a href="/privacy/">Privacy</a>
+          <button type="button" data-privacy-settings>Privacy settings</button>
+        </div>
+      </div>
+    </footer>
+    <section class="consent-panel" data-consent hidden aria-labelledby="consent-title" aria-describedby="consent-description">
+      <div class="eyebrow">Your signal. Your choice.</div>
+      <h2 id="consent-title">A little insight, only with permission.</h2>
+      <p id="consent-description">Optional analytics help us understand what gets played and explored. Nothing loads until you accept. <a href="/privacy/">Read our privacy policy.</a></p>
+      {!(site.analytics.enabled && site.analytics.measurementId) && <p>Analytics is not currently configured. Your choice will be saved for future visits.</p>}
+      <div class="button-row"><button class="button primary" type="button" data-consent-accept>Accept analytics</button><button class="button secondary" type="button" data-consent-decline>Decline</button></div>
+      <button class="consent-close" type="button" data-consent-close>Close settings <span aria-hidden="true">×</span></button>
+    </section>
+    <p class="sr-only" role="status" data-consent-status></p>
+    <script>import '../scripts/consent';</script>
+  </body>
+</html>

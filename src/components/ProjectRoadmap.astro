@@ -1,0 +1,9 @@
+---
+import type { Project } from '../lib/schema';
+interface Props { project: Project }
+const { project } = Astro.props;
+const categories = ['Completed', 'Current', 'Planned', 'Someday / Exploring'] as const;
+const requirementLabels: Record<string, string> = { os: 'Operating system', cpu: 'Processor', ram: 'Memory', gpu: 'Graphics', storage: 'Storage', input: 'Input', network: 'Network', notes: 'Notes' };
+---
+{project.milestones.length > 0 && <section class="detail-section" aria-labelledby="roadmap-heading"><p class="eyebrow">The build log</p><h2 id="roadmap-heading">Where it stands. Where it’s going.</h2><p class="section-description">Current work and future direction are separate. Planned and exploratory ideas are not promises or playable features.</p><div class="milestone-grid">{categories.map((category) => { const milestones = project.milestones.filter((m) => m.category === category); return milestones.length > 0 && <div class="milestone-group"><h3><span class:list={['milestone-dot', { complete: category === 'Completed', current: category === 'Current' }]} aria-hidden="true"></span>{category}</h3><ul>{milestones.map((milestone) => <li><h4>{milestone.title}</h4>{milestone.description && <p>{milestone.description}</p>}{milestone.date && <span class="mono">{milestone.date}</span>}</li>)}</ul></div>; })}</div></section>}
+{project.requirements && <section class="detail-section" aria-labelledby="requirements-heading"><p class="eyebrow">Before you play</p><h2 id="requirements-heading">System requirements</h2><div class="requirements-grid">{(['minimum', 'recommended'] as const).map((tier) => project.requirements?.[tier] && <div class="requirement-panel"><h3>{tier === 'minimum' ? 'Minimum' : 'Recommended'}</h3><dl>{Object.entries(project.requirements[tier]!).map(([key, value]) => <div><dt>{requirementLabels[key] ?? key}</dt><dd>{value}</dd></div>)}</dl></div>)}</div></section>}

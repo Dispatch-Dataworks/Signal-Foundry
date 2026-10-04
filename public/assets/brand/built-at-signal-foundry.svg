@@ -1,0 +1,50 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="340"
+  height="64"
+  viewBox="0 0 340 64"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Built at Signal Foundry</title>
+  <desc id="desc">
+    Temporary original text badge with an abstract signal line; replace with the
+    approved studio badge when available.
+  </desc>
+  <rect
+    x="1"
+    y="1"
+    width="338"
+    height="62"
+    rx="10"
+    fill="#122327"
+    stroke="#58736f"
+  />
+  <path
+    d="M14 34h8l5-11 7 22 7-29 8 29 6-11h9"
+    fill="none"
+    stroke="#e4b878"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
+  <text
+    x="80"
+    y="25"
+    font-family="monospace"
+    font-size="10"
+    letter-spacing="2"
+    fill="#a8b9b6"
+  >
+    BUILT AT
+  </text>
+  <text
+    x="79"
+    y="45"
+    font-family="system-ui,sans-serif"
+    font-size="19"
+    font-weight="600"
+    fill="#e9e5da"
+  >
+    Signal Foundry
+  </text>
+</svg>

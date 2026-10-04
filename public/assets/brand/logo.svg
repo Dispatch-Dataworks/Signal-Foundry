@@ -1,0 +1,41 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="660"
+  height="100"
+  viewBox="0 0 660 100"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Signal Foundry Games — temporary wordmark</title>
+  <desc id="desc">
+    Original text and abstract signal-line fallback. Not the final studio logo.
+  </desc>
+  <path
+    d="M6 50h14l10-22 14 44 15-58 16 58 13-22h18"
+    fill="none"
+    stroke="#e4b878"
+    stroke-width="4"
+    stroke-linejoin="round"
+  />
+  <text
+    x="127"
+    y="54"
+    font-family="system-ui,sans-serif"
+    font-weight="650"
+    font-size="34"
+    fill="#e9e5da"
+    letter-spacing="2"
+  >
+    SIGNAL FOUNDRY
+  </text>
+  <text
+    x="130"
+    y="81"
+    font-family="monospace"
+    font-size="14"
+    fill="#a8b9b6"
+    letter-spacing="5"
+  >
+    GAMES
+  </text>
+</svg>

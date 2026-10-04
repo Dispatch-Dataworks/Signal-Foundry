@@ -1,0 +1,77 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Signal Foundry Games</title>
+  <desc id="desc">
+    Original temporary social card with the studio name, tagline, and abstract
+    signal lines. Not a final logo or game screenshot.
+  </desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1">
+      <stop stop-color="#172e31" />
+      <stop offset="1" stop-color="#080f18" />
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#a1c3b5" stroke-opacity=".06" fill="none" />
+    </pattern>
+  </defs>
+  <path d="M0 0h1200v630H0z" fill="url(#bg)" />
+  <path d="M0 0h1200v630H0z" fill="url(#grid)" />
+  <circle
+    cx="1060"
+    cy="100"
+    r="240"
+    fill="none"
+    stroke="#9bc6bc"
+    stroke-opacity=".12"
+  />
+  <circle
+    cx="1060"
+    cy="100"
+    r="300"
+    fill="none"
+    stroke="#9bc6bc"
+    stroke-opacity=".06"
+  />
+  <path
+    d="M75 135h32l17-31 24 62 25-88 25 88 22-31h88"
+    fill="none"
+    stroke="#e4b878"
+    stroke-width="4"
+    stroke-linejoin="round"
+  />
+  <g font-family="system-ui,sans-serif" fill="#eee9df">
+    <text x="75" y="283" font-size="78" font-weight="650" letter-spacing="-2">
+      Signal Foundry
+    </text>
+    <text
+      x="79"
+      y="335"
+      font-family="monospace"
+      font-size="25"
+      letter-spacing="9"
+      fill="#a8c2ba"
+    >
+      GAMES
+    </text>
+    <text x="79" y="430" font-size="30">Games we want to play.</text>
+    <text x="79" y="477" font-size="26" fill="#b9c8c3">
+      Built for people who think like we do.
+    </text>
+  </g>
+  <text
+    x="79"
+    y="572"
+    font-family="monospace"
+    font-size="17"
+    fill="#dbb87f"
+    letter-spacing="2"
+  >
+    SIGNALFOUNDRY.GAMES
+  </text>
+</svg>

@@ -1,0 +1,18 @@
+---
+import type { Project } from '../lib/schema';
+interface Props { project: Project; compact?: boolean }
+const { project, compact = false } = Astro.props;
+const image = project.card ?? project.hero ?? { src: `/assets/projects/${project.slug}/cover.svg`, alt: `${project.title} project artwork` };
+---
+<article class:list={['project-card', { compact }]}>
+  <a class="card-art" href={`/projects/${project.slug}/`} tabindex="-1" aria-hidden="true">
+    <img src={image.src} alt="" width="960" height="600" loading="lazy" decoding="async" />
+    <span class="art-index">{project.collection === 'games' ? 'PLAY / EXPLORE' : 'BUILD / EXPERIMENT'}</span>
+  </a>
+  <div class="card-body">
+    <div class="card-meta"><span class:list={['status', { archived: project.status === 'Archived' }]}>{project.status}</span><span>{project.developmentState}</span></div>
+    <h3><a href={`/projects/${project.slug}/`}>{project.title}<span aria-hidden="true">↗</span></a></h3>
+    <p>{project.excerpt}</p>
+    <div class="card-bottom"><span>{project.platforms.length ? project.platforms.join(' / ') : 'Platform to be determined'}</span><span class="card-link" aria-hidden="true">Project notes →</span></div>
+  </div>
+</article>

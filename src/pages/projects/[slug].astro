@@ -1,0 +1,50 @@
+---
+import { render } from 'astro:content';
+import type { InferGetStaticPropsType } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+import ProjectDetails from '../../components/ProjectDetails.astro';
+import ProjectMedia from '../../components/ProjectMedia.astro';
+import ProjectRoadmap from '../../components/ProjectRoadmap.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import PostCard from '../../components/PostCard.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import { getSiteContent } from '../../lib/data';
+import { relatedProjects } from '../../lib/content';
+import { feedbackHref, site } from '../../config';
+export async function getStaticPaths() {
+  const { projects, posts } = await getSiteContent();
+  return projects.map((entry) => ({ params: { slug: entry.data.slug }, props: { entry, projects, posts } }));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { entry, projects, posts } = Astro.props;
+const project = entry.data;
+const { Content } = await render(entry);
+const image = project.hero ?? project.card ?? { src: `/assets/projects/${project.slug}/cover.svg`, alt: `${project.title} project artwork` };
+const related = relatedProjects(project, projects);
+const relatedPosts = posts.filter((post) => post.data.projects.includes(project.slug)).slice(0, 3);
+const actions = [...project.actions].sort((a, b) => a.priority - b.priority);
+const schema = {
+  '@context': 'https://schema.org', '@type': 'CreativeWork',
+  name: project.title, description: project.excerpt, url: new URL(`/projects/${project.slug}/`, site.url).href,
+  image: new URL(image.src, site.url).href,
+  ...(project.updated ? { dateModified: project.updated } : {}),
+  creator: { '@type': 'Organization', name: project.developer ?? site.title },
+};
+---
+<Layout title={project.seo?.title ?? project.title} description={project.seo?.description ?? project.excerpt} image={project.seo?.image ?? image.src} structuredData={schema}>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href={`/${project.collection}/`}>{project.collection === 'games' ? 'Games' : 'The Workshop'}</a><span aria-hidden="true">/</span><span aria-current="page">{project.title}</span></nav>
+    <header class="project-heading">
+      <div><div class="eyebrow"><span class="status">{project.status}</span><span>{project.developmentState}</span></div><h1>{project.title}</h1><p>{project.excerpt}</p>
+      <div class="button-row">{actions.map((action, index) => <a class:list={['button', index === 0 ? 'primary' : 'secondary']} href={action.url} data-track={action.kind} data-project={project.slug}>{action.label} <span aria-hidden="true">↗</span></a>)}</div>
+      {actions.length === 0 && <p class="availability-note">{project.status === 'Archived' ? 'This project is archived. Its notes remain here for the curious.' : 'No public build or external destination is available yet. Explore the project notes below.'}</p>}</div>
+      <div class="project-hero-art"><img src={image.src} alt={image.alt} width="1200" height="750" fetchpriority="high" decoding="async" /></div>
+    </header>
+    <div class="project-body"><div class="prose project-prose"><Content /></div><ProjectDetails project={project} /></div>
+    <ProjectMedia project={project} />
+    <ProjectRoadmap project={project} />
+    <section class="feedback-panel" aria-labelledby="feedback-heading"><div><p class="eyebrow">Keep the conversation going</p><h2 id="feedback-heading">A thought worth sharing?</h2><p>Tell us what clicked, what didn’t, or what you’d like to explore.</p></div><a class="button secondary" href={feedbackHref(`Signal Foundry — ${project.title} Feedback`)} data-track="feedback" data-project={project.slug}>Send project feedback <span aria-hidden="true">↗</span></a></section>
+    {relatedPosts.length > 0 && <section class="section"><SectionHeading eyebrow="From the build log" title={`Notes on ${project.title}`} href={`/devlog/?project=${project.slug}`} linkText="All project notes" /><div class="card-grid post-grid">{relatedPosts.map((post) => <PostCard post={post.data} />)}</div></section>}
+    {related.length > 0 && <section class="section"><SectionHeading eyebrow="Follow the thread" title="Other signals to explore." /><div class="card-grid">{related.map((other) => <ProjectCard project={other.data} />)}</div></section>}
+  </div>
+</Layout>

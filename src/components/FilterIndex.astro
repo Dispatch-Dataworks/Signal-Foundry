@@ -1,0 +1,39 @@
+---
+import type { Entry, Project, Post } from '../lib/schema';
+import ProjectCard from './ProjectCard.astro';
+import PostCard from './PostCard.astro';
+interface Props { projects?: Entry<Project>[]; posts?: Entry<Post>[]; projectOptions?: Entry<Project>[] }
+const { projects, posts, projectOptions = [] } = Astro.props;
+const projectMode = projects !== undefined;
+const options = (values: string[]) => [...new Set(values)].sort((a, b) => a.localeCompare(b));
+const fields = projectMode ? [
+  { name: 'status', label: 'Status', values: options(projects!.map((e) => e.data.status)) },
+  { name: 'developmentState', label: 'Development', values: options(projects!.map((e) => e.data.developmentState)) },
+  { name: 'platform', label: 'Platform', values: options(projects!.flatMap((e) => e.data.platforms)) },
+  { name: 'genre', label: 'Genre', values: options(projects!.flatMap((e) => e.data.genres)) },
+  { name: 'tag', label: 'Tag', values: options(projects!.flatMap((e) => e.data.tags)) },
+] : [
+  { name: 'project', label: 'Project', values: options((posts ?? []).flatMap((e) => e.data.projects)) },
+  { name: 'tag', label: 'Tag', values: options((posts ?? []).flatMap((e) => e.data.tags)) },
+];
+const total = projects?.length ?? posts?.length ?? 0;
+---
+<div data-filter-root>
+  <form class="filter-form" data-filters aria-label={projectMode ? 'Filter projects' : 'Filter devlog entries'}>
+    <div class="filter-fields">
+      {fields.map((field) => <label><span>{field.label}</span><select name={field.name}><option value="">All {field.label.toLowerCase() === 'development' ? 'development states' : `${field.label.toLowerCase()}${field.label === 'Status' ? 'es' : 's'}`}</option>{field.values.map((value) => <option value={value}>{field.name === 'project' ? projectOptions.find((p) => p.data.slug === value)?.data.title ?? value : value}</option>)}</select></label>)}
+    </div>
+    <div class="filter-bottom">
+      {projectMode && <label class="checkbox-label"><input type="checkbox" name="archived" value="true" /><span>Include archived projects</span></label>}
+      <button class="reset-button" type="button" data-filter-reset>Reset filters <span aria-hidden="true">↺</span></button>
+    </div>
+  </form>
+  <div class="results-heading"><p data-filter-count aria-live="polite">{total} {projectMode ? 'projects' : 'entries'}</p><span class="mono">THE SIGNAL / THE WHOLE PICTURE</span></div>
+  <div class:list={['card-grid', { 'post-grid': !projectMode }]}>
+    {projects?.map((entry) => <div data-filter-item data-filters={JSON.stringify({ status: [entry.data.status], developmentState: [entry.data.developmentState], platform: entry.data.platforms, genre: entry.data.genres, tag: entry.data.tags })}><ProjectCard project={entry.data} /></div>)}
+    {posts?.map((entry, index) => <div data-filter-item data-filters={JSON.stringify({ project: entry.data.projects, tag: entry.data.tags })}><PostCard post={entry.data} number={index} /></div>)}
+  </div>
+  <div class="empty-state" data-filter-empty hidden><h2>No signals on this frequency.</h2><p>Try another combination, or reset the filters to explore everything.</p></div>
+  <noscript>{total === 0 && <div class="empty-state"><h2>Nothing here just yet.</h2><p>Good things take a little time on the bench. Check back soon.</p></div>}<p class="filter-note">Filters need JavaScript. All entries, including archived projects, are shown above.</p></noscript>
+</div>
+<script>import '../scripts/filter';</script>
