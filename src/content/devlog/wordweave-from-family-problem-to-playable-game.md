@@ -4,6 +4,9 @@ slug: wordweave-from-family-problem-to-playable-game
 published: '2025-08-18'
 draft: false
 excerpt: WordWeave grew from a practical attempt to make English practice more engaging into a released browser word game with scoring, sharing, expanded word lists, and multiple puzzle modes.
+hero:
+  src: /assets/projects/wordweave/ww-logo2.png
+  alt: WordWeave logo artwork from the original project.
 projects: [wordweave]
 tags: [development, word-game, learning, browser]
 seo:
