@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">Signal Foundry Games</title><desc id="desc">Electric cyan signal waveform forming the Signal Foundry Games studio mark.</desc>
+<defs><linearGradient id="g" x1="36" y1="48" x2="220" y2="208" gradientUnits="userSpaceOnUse"><stop stop-color="#6be8ff"/><stop offset=".5" stop-color="#21c9ee"/><stop offset="1" stop-color="#00a9d4"/></linearGradient><filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="256" height="256" rx="52" fill="#081217"/><circle cx="128" cy="128" r="92" fill="none" stroke="#1b3943" stroke-width="2"/>
+<g fill="url(#g)" filter="url(#glow)"><rect x="42" y="112" width="12" height="32" rx="6"/><rect x="64" y="91" width="12" height="74" rx="6"/><rect x="86" y="64" width="12" height="128" rx="6"/><rect x="108" y="35" width="14" height="186" rx="7"/><rect x="134" y="57" width="14" height="142" rx="7"/><rect x="160" y="82" width="12" height="92" rx="6"/><rect x="182" y="103" width="12" height="50" rx="6"/><rect x="204" y="116" width="10" height="24" rx="5"/></g>
+<path d="M31 128h194" stroke="#77ecff" stroke-opacity=".18" stroke-width="2"/>
+</svg>
