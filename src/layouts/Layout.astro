@@ -133,9 +133,9 @@ const json = JSON.stringify(schema).replace(/</g, '\\u003c');
       </div>
       <div class="container footer-bottom">
         <p>
-          © {new Date().getUTCFullYear()} {site.title}.{' '}
-          {site.parent.relationship}{' '}
-          <a href={site.parent.url}>{site.parent.name}</a>.
+          © {new Date().getUTCFullYear()}{' '}
+          <a href={site.parent.url}>{site.parent.name}</a>. {site.title} is{' '}
+          {site.parent.relationship.toLowerCase()} {site.parent.name}.
         </p>
         <div class="footer-links">
           {site.socials.map((social) => (

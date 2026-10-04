@@ -24,8 +24,11 @@ const projects = Astro.props.projects.filter((entry) =>
       No algorithm. No rankings. Just one of the things we’re actively building,
       picked at random.
     </p>
+    <a class="text-link" href="/games/">
+      Explore the games <span aria-hidden="true">↗</span>
+    </a>
     <a class="text-link" href="/workshop/">
-      Inside the workshop <span aria-hidden="true">↗</span>
+      Explore the workshop <span aria-hidden="true">↗</span>
     </a>
   </div>
   <div data-bench>
@@ -39,7 +42,8 @@ const projects = Astro.props.projects.filter((entry) =>
       <div class="empty-state">
         <h3>The bench is quiet.</h3>
         <p>New experiments will appear here when they’re ready to share.</p>
-        <a href="/games/">Explore the games →</a>
+        <a href="/games/">Explore the games</a> /
+        <a href="/workshop/">Explore the workshop</a>
       </div>
     )}
   </div>
