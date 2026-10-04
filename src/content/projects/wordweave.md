@@ -13,10 +13,10 @@ platforms: [Browser]
 developer: Signal Foundry Games
 hero:
   src: /assets/projects/wordweave/cover.svg
-  alt: Original schematic illustration of woven letter tiles, not a game screenshot.
+  alt: Official WordWeave project artwork with colorful woven letter tiles.
 card:
   src: /assets/projects/wordweave/cover.svg
-  alt: Woven letter tiles in a conceptual illustration for WordWeave.
+  alt: WordWeave project artwork with colorful interlocking letter tiles.
 actions:
   - label: Play Now
     url: https://wordweave.games/
@@ -44,5 +44,3 @@ That is a good example of how Signal Foundry works: begin with something real, m
 ## What Makes It Different
 
 WordWeave has an educational origin without being a hypothetical classroom product. It is a real game that grew from a family need, built for the browser to keep getting started straightforward.
-
-The illustration on this page is an original schematic placeholder—not a screenshot or final game logo.
