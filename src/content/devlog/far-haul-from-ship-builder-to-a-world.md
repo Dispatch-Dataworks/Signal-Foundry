@@ -4,6 +4,9 @@ slug: far-haul-from-ship-builder-to-a-world
 published: '2026-10-02'
 draft: false
 excerpt: The first Far Haul prototype quickly expanded beyond modular ships into the data and simulation needed for a freight-driven universe.
+hero:
+  src: /assets/projects/far-haul/builder-cargo.webp
+  alt: Far Haul modular ship builder and cargo preview from the playable prototype.
 projects: [far-haul]
 tags: [development, worldbuilding, ships, simulation]
 seo:
