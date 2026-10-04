@@ -16,11 +16,17 @@ export const site = {
     { label: 'The Workshop', href: '/workshop/' },
     { label: 'Devlog', href: '/devlog/' },
   ],
-  socials: [] as { label: string; href: string }[],
+  socials: [
+    { label: 'GitHub', href: 'https://github.com/Dispatch-Dataworks' },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/company/dispatchdataworks',
+    },
+  ] as { label: string; href: string }[],
   analytics: { enabled: true, measurementId: '' },
   defaultSocialImage: '/assets/brand/social.png',
   branding: {
-    logo: '',
+    logo: '/assets/brand/signal-foundry-mark.svg',
     badge: '/assets/brand/built-at-signal-foundry.svg',
   },
   featuredProjects: ['far-haul', 'wordweave', '911-simulator'],

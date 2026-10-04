@@ -1,86 +1,15 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="1200"
-  height="800"
-  viewBox="0 0 1200 800"
-  role="img"
-  aria-labelledby="title desc"
->
-  <title id="title">WordWeave — woven words</title>
-  <desc id="desc">
-    Original schematic placeholder illustration. Interlocking teal and amber
-    letter tiles suggest a woven word puzzle. This is not a game screenshot or
-    final logo.
-  </desc>
-  <defs>
-    <linearGradient id="bg" x2="1" y2="1">
-      <stop stop-color="#122b31" />
-      <stop offset="1" stop-color="#071619" />
-    </linearGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#9dd8cc" stroke-opacity=".06" />
-    </pattern>
-    <linearGradient id="tile" x2="0" y2="1">
-      <stop stop-color="#b2e4d3" />
-      <stop offset="1" stop-color="#64b7a4" />
-    </linearGradient>
-  </defs>
-  <path fill="url(#bg)" d="M0 0h1200v800H0z" />
-  <path fill="url(#grid)" d="M0 0h1200v800H0z" />
-  <circle
-    cx="610"
-    cy="395"
-    r="270"
-    fill="none"
-    stroke="#b2e4d3"
-    stroke-opacity=".12"
-  />
-  <circle
-    cx="610"
-    cy="395"
-    r="310"
-    fill="none"
-    stroke="#b2e4d3"
-    stroke-opacity=".06"
-  />
-  <g fill="none" stroke="#e2ae65" stroke-width="2" opacity=".55">
-    <path d="M165 310H1035M165 430H1035M430 140V650M670 140V650" />
-    <path d="M165 302v16m870-16v16M422 140h16m224 0h16M422 650h16m224 0h16" />
-  </g>
-  <g fill="url(#tile)" stroke="#d4eee4" stroke-opacity=".5">
-    <rect x="260" y="260" width="100" height="100" rx="13" />
-    <rect x="380" y="260" width="100" height="100" rx="13" />
-    <rect x="500" y="260" width="100" height="100" rx="13" />
-    <rect x="620" y="260" width="100" height="100" rx="13" />
-    <rect x="740" y="260" width="100" height="100" rx="13" />
-    <rect x="380" y="380" width="100" height="100" rx="13" />
-    <rect x="620" y="380" width="100" height="100" rx="13" />
-    <rect x="380" y="500" width="100" height="100" rx="13" />
-    <rect x="620" y="500" width="100" height="100" rx="13" />
-  </g>
-  <rect x="500" y="380" width="100" height="100" rx="13" fill="#e2ae65" />
-  <g
-    fill="#12312e"
-    font-family="system-ui,sans-serif"
-    font-size="47"
-    font-weight="650"
-    text-anchor="middle"
-  >
-    <text x="310" y="327">W</text>
-    <text x="430" y="327">E</text>
-    <text x="550" y="327">A</text>
-    <text x="670" y="327">V</text>
-    <text x="790" y="327">E</text>
-    <text x="430" y="447">N</text>
-    <text x="550" y="447">+</text>
-    <text x="670" y="447">O</text>
-    <text x="430" y="567">G</text>
-    <text x="670" y="567">W</text>
-  </g>
-  <g font-family="monospace" font-size="15" letter-spacing="3">
-    <text x="55" y="65" fill="#a9d6cb">SIGNAL FOUNDRY / WORDWEAVE</text>
-    <text x="55" y="745" fill="#c7a878">
-      SCHEMATIC ILLUSTRATION · NOT GAMEPLAY
-    </text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+<title id="title">WordWeave</title><desc id="desc">Official Signal Foundry promotional artwork for WordWeave with a colorful woven letter-board motif.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101a2d"/><stop offset=".55" stop-color="#152d39"/><stop offset="1" stop-color="#071216"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-opacity=".35"/></filter></defs>
+<rect width="1200" height="800" fill="url(#bg)"/><g opacity=".12" stroke="#63dcf4"><path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M0 600h1200M0 720h1200M120 0v800M240 0v800M360 0v800M480 0v800M600 0v800M720 0v800M840 0v800M960 0v800M1080 0v800"/></g>
+<text x="76" y="122" fill="#64ddf4" font-family="ui-monospace,monospace" font-size="20" font-weight="700" letter-spacing="5">SIGNAL FOUNDRY / RELEASED</text>
+<text x="72" y="224" fill="#f5fbfc" font-family="system-ui,sans-serif" font-size="86" font-weight="850" letter-spacing="-3">WORD<tspan fill="#55d9ef">WEAVE</tspan></text>
+<text x="77" y="270" fill="#a7bdc3" font-family="system-ui,sans-serif" font-size="26">Word puzzles with purpose.</text>
+<g transform="translate(112 340) rotate(-2 480 150)" filter="url(#shadow)" font-family="system-ui,sans-serif" font-size="42" font-weight="800" text-anchor="middle">
+<g fill="#f1b94f"><rect x="0" y="0" width="92" height="92" rx="15"/><text x="46" y="61" fill="#18212a">W</text></g><g fill="#ef6d6d"><rect x="104" y="0" width="92" height="92" rx="15"/><text x="150" y="61" fill="#fff">E</text></g><g fill="#5ec9a8"><rect x="208" y="0" width="92" height="92" rx="15"/><text x="254" y="61" fill="#10241e">A</text></g><g fill="#6ca7f2"><rect x="312" y="0" width="92" height="92" rx="15"/><text x="358" y="61" fill="#fff">V</text></g><g fill="#a47ee8"><rect x="416" y="0" width="92" height="92" rx="15"/><text x="462" y="61" fill="#fff">E</text></g>
+<g fill="#6ca7f2"><rect x="208" y="104" width="92" height="92" rx="15"/><text x="254" y="165" fill="#fff">R</text></g><g fill="#f1b94f"><rect x="208" y="208" width="92" height="92" rx="15"/><text x="254" y="269" fill="#18212a">D</text></g>
+<g fill="#5ec9a8"><rect x="312" y="104" width="92" height="92" rx="15"/><text x="358" y="165" fill="#10241e">O</text></g><g fill="#ef6d6d"><rect x="416" y="104" width="92" height="92" rx="15"/><text x="462" y="165" fill="#fff">R</text></g><g fill="#a47ee8"><rect x="520" y="104" width="92" height="92" rx="15"/><text x="566" y="165" fill="#fff">D</text></g>
+</g>
+<g transform="translate(805 382)"><rect width="300" height="220" rx="22" fill="#0a141a" stroke="#31515a" stroke-width="2"/><text x="30" y="48" fill="#6ee3f7" font-family="ui-monospace,monospace" font-size="15" letter-spacing="3">TODAY'S THREAD</text><text x="30" y="96" fill="#f3f7f8" font-family="system-ui,sans-serif" font-size="27" font-weight="700">BUILD WORDS.</text><text x="30" y="132" fill="#f3f7f8" font-family="system-ui,sans-serif" font-size="27" font-weight="700">FIND CONNECTIONS.</text><path d="M30 174h240" stroke="#29444c"/><text x="30" y="198" fill="#93aab0" font-family="system-ui,sans-serif" font-size="17">Playable in your browser</text></g>
+<text x="77" y="744" fill="#718c94" font-family="ui-monospace,monospace" font-size="14" letter-spacing="3">OFFICIAL PROJECT ARTWORK · SIGNAL FOUNDRY GAMES</text>
 </svg>
