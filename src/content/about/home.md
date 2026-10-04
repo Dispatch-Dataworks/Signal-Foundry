@@ -9,7 +9,9 @@ We make the games we want to play. Some start with curiosity; others start with 
 
 ## Meet the Head Nerd
 
-Ben Townsend is our Head Nerd: a software engineer, a radio and TV person, and a dad. His kids and stepkids are part of the story, and family members are often the first people to try things and tell him what works—and what does not.
+Today, Signal Foundry is primarily Ben Townsend's development studio. Ben is our Head Nerd: a software engineer, a radio and TV person, and a dad who enjoys simulators, open-world games, technology, and building things.
+
+His kids and stepkids are part of the story. Family members inspire projects, contribute ideas, and are often the first people to try things and tell him what works—and what does not.
 
 WordWeave began as a way to help one of his kids with English grades. That mix of family life, practical problem-solving, and making things is a pretty good introduction to the studio.
 

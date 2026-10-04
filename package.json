@@ -4,6 +4,9 @@
   "description": "The static home of Signal Foundry Games",
   "type": "module",
   "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

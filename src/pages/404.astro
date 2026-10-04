@@ -2,6 +2,29 @@
 import Layout from '../layouts/Layout.astro';
 import Waveform from '../components/Waveform.astro';
 ---
+
 <Layout title="Signal not found" noindex>
-  <section class="container not-found"><div><p class="eyebrow">404 / Outside the frequency</p><h1>Lost the<br /><span>signal?</span></h1><p>This page isn’t on the bench. It may have moved, or the address might have a stray character.</p><div class="button-row"><a class="button primary" href="/">Back to the foundry <span aria-hidden="true">→</span></a><a class="button secondary" href="/games/">Explore the games</a></div></div><Waveform small /></section>
+  <section class="container not-found">
+    <div>
+      <p class="eyebrow">404 / Outside the frequency</p>
+      <h1>
+        Lost the
+        <br />
+        <span>signal?</span>
+      </h1>
+      <p>
+        This page isn’t on the bench. It may have moved, or the address might
+        have a stray character.
+      </p>
+      <div class="button-row">
+        <a class="button primary" href="/">
+          Back to the foundry <span aria-hidden="true">→</span>
+        </a>
+        <a class="button secondary" href="/games/">
+          Explore the games
+        </a>
+      </div>
+    </div>
+    <Waveform small />
+  </section>
 </Layout>

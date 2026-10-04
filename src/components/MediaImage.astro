@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { assetExists } from './media';
+
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  sizes?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+const {
+  src,
+  alt,
+  width,
+  height,
+  sizes = '(max-width: 580px) calc(100vw - 40px), (max-width: 820px) calc(100vw - 64px), 680px',
+  loading = 'lazy',
+  fetchpriority = 'auto',
+} = Astro.props;
+const assets = import.meta.glob<{ default: ImageMetadata }>(
+  '../../public/assets/**/*.{png,jpg,jpeg,webp,avif}',
+  { eager: true },
+);
+const image = assets[`../../public${src}`]?.default;
+const widths = image
+  ? [
+      ...new Set(
+        [480, 800, 1200, 1600, image.width].filter(
+          (value) => value <= image.width,
+        ),
+      ),
+    ]
+  : [];
+---
+
+{image ? (
+  <Image
+    src={image}
+    alt={alt}
+    widths={widths}
+    sizes={sizes}
+    format="webp"
+    quality={82}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    decoding="async"
+  />
+) : assetExists(src) ? (
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    decoding="async"
+  />
+) : (
+  <div
+    class="media-placeholder"
+    style={`aspect-ratio: ${width} / ${height}`}
+    role={alt ? 'img' : undefined}
+    aria-label={alt || undefined}
+    aria-hidden={!alt || undefined}
+  >
+    <svg viewBox="0 0 320 200" fill="none" aria-hidden="true">
+      <circle
+        cx="160"
+        cy="100"
+        r="64"
+        stroke="currentColor"
+        stroke-opacity=".25"
+      />
+      <path
+        d="M32 100H288M160 24V176"
+        stroke="currentColor"
+        stroke-opacity=".18"
+      />
+      <path
+        d="M100 92V108M120 74V126M140 58V142M160 42V158M180 66V134M200 82V118M220 94V106"
+        stroke="currentColor"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+    </svg>
+    <span aria-hidden="true">ARTWORK TO COME</span>
+  </div>
+)}

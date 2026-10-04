@@ -4,7 +4,6 @@ slug: wordweave
 excerpt: A fully playable browser word game that began with a very practical goal—helping one of Ben's kids improve their English grades.
 collection: games
 status: Released
-developmentState: Maintenance
 featured: true
 order: 2
 bench: false
@@ -18,6 +17,11 @@ hero:
 card:
   src: /assets/projects/wordweave/cover.svg
   alt: Woven letter tiles in a conceptual illustration for WordWeave.
+actions:
+  - label: Play Now
+    url: https://wordweave.games/
+    kind: play
+    priority: 0
 milestones:
   - category: Completed
     title: Fully playable browser release

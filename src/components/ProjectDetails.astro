@@ -1,18 +1,41 @@
 ---
 import type { Project } from '../lib/schema';
-interface Props { project: Project }
+interface Props {
+  project: Project;
+}
 const { project } = Astro.props;
 const facts = [
-  ['Status', project.status], ['Development', project.developmentState],
-  ['Platforms', project.platforms.join(', ')], ['Genres', project.genres.join(', ')],
-  ['Version', project.version], ['Developer', project.developer],
-  ['Engine', project.engine], ['Technology', project.technologies.join(', ')],
-  ['Audience', project.audience], ['Content guidance', project.contentGuidance],
-  ['Updated', project.updated], ['Date', project.displayDate],
+  ['Status', project.status],
+  ['Development', project.developmentState],
+  ['Platforms', project.platforms.join(', ')],
+  ['Genres', project.genres.join(', ')],
+  ['Version', project.version],
+  ['Developer', project.developer],
+  ['Engine', project.engine],
+  ['Technology', project.technologies.join(', ')],
+  ['Audience', project.audience],
+  ['Content guidance', project.contentGuidance],
+  ['Updated', project.updated],
+  ['Date', project.displayDate],
 ].filter(([, value]) => value);
 ---
+
 <aside class="project-details" aria-labelledby="details-heading">
-  <p class="eyebrow">At a glance</p><h2 id="details-heading">Project details</h2>
-  <dl>{facts.map(([label, value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
-  {project.tags.length > 0 && <div class="tag-list" aria-label="Project tags">{project.tags.map((tag) => <span>{tag}</span>)}</div>}
+  <p class="eyebrow">At a glance</p>
+  <h2 id="details-heading">Project details</h2>
+  <dl>
+    {facts.map(([label, value]) => (
+      <div>
+        <dt>{label}</dt>
+        <dd>{value}</dd>
+      </div>
+    ))}
+  </dl>
+  {project.tags.length > 0 && (
+    <div class="tag-list" aria-label="Project tags">
+      {project.tags.map((tag) => (
+        <span>{tag}</span>
+      ))}
+    </div>
+  )}
 </aside>

@@ -72,6 +72,16 @@ test('schema rejects malformed enums, URLs, gallery, dates and milestones', () =
       developmentState: 'On Hold',
     }),
   );
+  assert.equal(
+    projectSchema.parse({
+      title: 'Known release',
+      slug: 'known-release',
+      excerpt: 'A released game with no confirmed development state.',
+      collection: 'games',
+      status: 'Released',
+    }).developmentState,
+    undefined,
+  );
 });
 
 test('editorial ordering then update then title; input is not mutated', () => {
@@ -116,6 +126,7 @@ test('bench includes active Games and Workshop only; empty and single are safe',
     { status: 'Archived' },
     { bench: false },
     { developmentState: 'On Hold' },
+    { developmentState: undefined },
   ]) {
     assert.equal(benchEligible(project('no', extra).data), false);
   }

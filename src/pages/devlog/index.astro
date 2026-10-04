@@ -4,9 +4,29 @@ import FilterIndex from '../../components/FilterIndex.astro';
 import { getSiteContent } from '../../lib/data';
 const { projects, posts } = await getSiteContent();
 ---
-<Layout title="Devlog" description="Field notes from Signal Foundry: design decisions, development progress, and lessons from building thoughtful games.">
+
+<Layout
+  title="Devlog"
+  description="Field notes from Signal Foundry: design decisions, development progress, and lessons from building thoughtful games."
+>
   <div class="container">
-    <header class="page-heading"><p class="eyebrow">Field notes / Development journal</p><h1>Behind<br /><span>the signal.</span></h1><p>What we’re making, why it matters to us, and what we’re learning along the way. Notes from the work, not a release schedule.</p></header>
-    <section class="index-section" aria-labelledby="entries-heading"><h2 id="entries-heading" class="sr-only">Browse devlog entries</h2><FilterIndex posts={posts} projectOptions={projects} /></section>
+    <header class="page-heading">
+      <p class="eyebrow">Field notes / Development journal</p>
+      <h1>
+        Behind
+        <br />
+        <span>the signal.</span>
+      </h1>
+      <p>
+        What we’re making, why it matters to us, and what we’re learning along
+        the way. Notes from the work, not a release schedule.
+      </p>
+    </header>
+    <section class="index-section" aria-labelledby="entries-heading">
+      <h2 id="entries-heading" class="sr-only">
+        Browse devlog entries
+      </h2>
+      <FilterIndex posts={posts} projectOptions={projects} />
+    </section>
   </div>
 </Layout>

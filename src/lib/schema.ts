@@ -74,7 +74,7 @@ export const projectSchema = z
     excerpt: text.max(300),
     collection: z.enum(['games', 'workshop']),
     status: z.enum(statuses),
-    developmentState: z.enum(developmentStates),
+    developmentState: z.enum(developmentStates).optional(),
     featured: z.boolean().default(false),
     pinned: z.boolean().default(false),
     order: z.number().int().nonnegative().optional(),

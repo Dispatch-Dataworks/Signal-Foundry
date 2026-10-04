@@ -62,30 +62,30 @@ The four launch records are `wordweave.md`, `911-simulator.md`, `far-haul.md`, a
 
 The schema is strict: unknown keys are rejected. All text values must be nonempty when supplied. Omit an optional text key rather than setting it to `""`.
 
-| Field                                         | Required / default | Meaning                                                                             |
-| --------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------- |
-| `title`, `slug`, `excerpt`                    | Required           | Name, URL identity, and summary (at most 300 characters)                            |
-| `collection`                                  | Required           | `games` or `workshop`                                                               |
-| `status`                                      | Required           | `Concept`, `Prototype`, `Playable Demo`, `Early Access`, `Released`, or `Archived`  |
-| `developmentState`                            | Required           | `Active Development`, `On Hold`, `Maintenance`, or `Inactive`                       |
-| `featured`, `pinned`                          | Default `false`    | Editorial prominence                                                                |
-| `order`                                       | Optional           | Nonnegative integer for editorial ordering                                          |
-| `bench`                                       | Default `true`     | Opt into the bench; only active, nonarchived projects qualify                       |
-| `tags`, `genres`, `platforms`, `technologies` | Default `[]`       | Lists of nonempty strings; only claim verified technology/platform support          |
-| `audience`, `contentGuidance`                 | Optional           | Intended audience and content notes; not a substitute for a formal rating           |
-| `hero`, `card`                                | Optional           | `{ src: "/assets/…", alt: "Useful description" }`                                   |
-| `displayDate`                                 | Optional           | Human-readable display text                                                         |
-| `sortDate`, `updated`                         | Optional           | Quoted valid calendar dates, `YYYY-MM-DD`                                           |
-| `version`, `developer`, `engine`              | Optional           | Verified project metadata                                                           |
-| `actions`                                     | Default `[]`       | External action buttons, described below                                            |
-| `gallery`                                     | Default `[]`       | Local gallery images, described below                                               |
-| `youtube`                                     | Optional           | `{ id, title, poster: { src, alt } }`; `id` must be an actual 11-character video ID |
-| `requirements`                                | Optional           | `minimum` and/or `recommended` requirement objects                                  |
-| `milestones`                                  | Default `[]`       | Categorized, manually maintained roadmap entries                                    |
-| `relatedProjects`                             | Default `[]`       | Existing project slugs; no self-reference                                           |
-| `seo`                                         | Optional           | Optional `title`, `description`, and local `image`                                  |
+| Field                                         | Required / default | Meaning                                                                              |
+| --------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------ |
+| `title`, `slug`, `excerpt`                    | Required           | Name, URL identity, and summary (at most 300 characters)                             |
+| `collection`                                  | Required           | `games` or `workshop`                                                                |
+| `status`                                      | Required           | `Concept`, `Prototype`, `Playable Demo`, `Early Access`, `Released`, or `Archived`   |
+| `developmentState`                            | Optional           | `Active Development`, `On Hold`, `Maintenance`, or `Inactive`; omit when unconfirmed |
+| `featured`, `pinned`                          | Default `false`    | Editorial prominence                                                                 |
+| `order`                                       | Optional           | Nonnegative integer for editorial ordering                                           |
+| `bench`                                       | Default `true`     | Opt into the bench; only active, nonarchived projects qualify                        |
+| `tags`, `genres`, `platforms`, `technologies` | Default `[]`       | Lists of nonempty strings; only claim verified technology/platform support           |
+| `audience`, `contentGuidance`                 | Optional           | Intended audience and content notes; not a substitute for a formal rating            |
+| `hero`, `card`                                | Optional           | `{ src: "/assets/…", alt: "Useful description" }`                                    |
+| `displayDate`                                 | Optional           | Human-readable display text                                                          |
+| `sortDate`, `updated`                         | Optional           | Quoted valid calendar dates, `YYYY-MM-DD`                                            |
+| `version`, `developer`, `engine`              | Optional           | Verified project metadata                                                            |
+| `actions`                                     | Default `[]`       | External action buttons, described below                                             |
+| `gallery`                                     | Default `[]`       | Local gallery images, described below                                                |
+| `youtube`                                     | Optional           | `{ id, title, poster: { src, alt } }`; `id` must be an actual 11-character video ID  |
+| `requirements`                                | Optional           | `minimum` and/or `recommended` requirement objects                                   |
+| `milestones`                                  | Default `[]`       | Categorized, manually maintained roadmap entries                                     |
+| `relatedProjects`                             | Default `[]`       | Existing project slugs; no self-reference                                            |
+| `seo`                                         | Optional           | Optional `title`, `description`, and local `image`                                   |
 
-Status answers **what can someone play?** Development state answers **is work happening?** Concepts and prototypes must be in the workshop. WordWeave is released and labeled Maintenance as an editorial launch assumption, not a sourced maintenance schedule; review that state with Ben before making a stronger activity claim. The two demos are actively developed. If Then Dungeon is an actively developed concept with no playable demo.
+Status answers **what can someone play?** Development state answers **is work happening?** Concepts and prototypes must be in the workshop. WordWeave is released; If Then Dungeon is a concept with no playable demo. Their development activity is unconfirmed, so `developmentState` is omitted rather than invented and no activity badge is shown. The two demos are explicitly known to be actively developed. Projects with unknown activity do not qualify for the bench; confirmed active projects can qualify from either collection.
 
 Projects sort by featured/pinned prominence, then ascending `order`, then most recent `updated`/`sortDate`, then title. The home-page featured selection is controlled separately by `featuredProjects` in the site config.
 
@@ -111,7 +111,7 @@ There are **no invented launch posts**. The empty devlog collection is tracked w
 
 Copy `templates/devlog.md` to `src/content/devlog/<slug>.md` only when a real update exists. Required fields are `title`, `slug`, `published` (quoted valid `YYYY-MM-DD`), and `excerpt` (at most 300 characters). Optional fields are `updated` (the same date format), `draft` (default `false`), `hero` (`{ src, alt }`), `projects` (existing project slugs; default `[]`), `tags` (default `[]`), and `seo` (optional `title`, `description`, local `image`).
 
-The template starts with `draft: true` and `published: '2099-01-01'` as two deliberate publication safeguards. Replace those dates with real dates. A draft is never public, even after its publication date. A nondraft future-dated post remains excluded until the publication day begins in **UTC**, and then only appears after a rebuild. Publication filtering applies to public devlog routes, listings, and sitemap output—not merely the visible cards. Apply the same gate if you add a feed.
+The template starts with `draft: true` and `published: '2099-01-01'` as two deliberate publication safeguards. Replace those dates with real dates. A draft is never public, even after its publication date. A nondraft future-dated post remains excluded until the publication day begins in **UTC**, and then only appears after a rebuild. Publication filtering applies to public devlog routes, listings, and sitemap output—not merely the visible cards. RSS and Atom feeds are intentionally excluded.
 
 The daily scheduled deployment rebuilds the default branch at 06:17 UTC so eligible posts can appear without a new commit. GitHub schedules may run late or be disabled after prolonged repository inactivity; use **Actions → Validate and deploy Pages → Run workflow** on `main` when precise release timing matters.
 
@@ -141,11 +141,20 @@ Starter copy uses the owner's project brief, not guessed implementation details.
 
 - WordWeave: a released, fully playable browser game, originating in a need to help one of Ben's kids with English grades.
 - 911 Simulator: a playable demo, with the remainder actively developed. No engine, implementation details, or unverified platforms are claimed.
-- Far Haul: a playable browser proof of concept for open-world sci-fi freight/exploration. The first-person interstellar vision includes charted routes into frontier/unknown systems, physical walkable modular ships with a boxy utilitarian design, planetary landing/exploration, and EVA repair. These are directions, not implemented-demo claims. A commercial installable release is a possible future, with no current storefront or price.
-- If Then Dungeon: a workshop concept, no playable demo, intended for roughly ages 10–15 as an informal target. Its design is planned.
+- Far Haul: a playable browser v0.1.0 prototype for open-world sci-fi freight/exploration. Current shipbuilding, freight/economy, local flight, docking, and FTL details are verified against its updated project site. The first-person interstellar vision includes charted routes into frontier/unknown systems, physical walkable modular ships with a boxy utilitarian design, planetary landing/exploration, and EVA repair. Walking, planetary, EVA, and broader frontier features are not implemented. A commercial installable release is a possible future, with no current storefront or price.
+- If Then Dungeon: a game-first workshop concept, no playable demo, intended for roughly ages 10–15 as an informal target. The owner's planned design includes a logic-first grid dungeon, card-built rule rows with Sensors/Actions/Operators, IF/THEN/ELSE, NOT/AND/OR and precedence, loops/ticks, deterministic retry/debugging loops, controlled enemy randomness, unused-card Pressure, monsters/hazards/upgrades, and replayability. None is claimed implemented. Campaign structure and themes are intended, but specific planned campaign themes are unavailable to verify because the supplied repository returned 404; no names or details are invented.
 
-The initial project-website research encountered DNS/access failures, and the supplied If Then Dungeon repository returned 404. Those failures do not prove that the projects are unavailable. Until verified, missing play/source links, screenshots, final logos, video IDs, requirements, release/version dates, and social accounts should remain missing rather than fabricated.
+The initial project-website research encountered DNS/access failures, and the supplied If Then Dungeon repository returned 404. Those failures do not prove that the projects are unavailable. The parent-business site and Far Haul sources were subsequently recovered from their authoritative public repositories. No authoritative studio social profiles were verified on the parent site, so `socials` remains empty; personal profiles are not substituted for studio accounts. For other unavailable sources, missing screenshots, final logos, video IDs, requirements, release/version dates, and unverified links remain omitted rather than fabricated.
 
-Each project's editable `cover.svg` also has an original `cover.png` social-preview export at 1200×630, referenced by `seo.image`. The PNG contains the entire schematic/concept illustration, including its labeling; it is not a screenshot. These files were generated directly with the already installed Sharp library, with no extra dependency or helper script.
+WordWeave, 911 Simulator, and If Then Dungeon each have an editable fallback `cover.svg` and an original `cover.png` social-preview export at 1200×630. The PNG contains the entire schematic/concept illustration, including its labeling; it is not a screenshot. These files were generated directly with the already installed Sharp library, with no extra dependency or helper script. Far Haul retains its editable fallback SVG but uses authorized real game screenshots for its hero/card/gallery and a screenshot-derived `gameplay-social.png` for SEO; its obsolete fallback PNG was removed.
+
+### Verified sources and asset provenance
+
+- Owner-supplied public action URLs: [WordWeave — Play Now](https://wordweave.games/) and [911 Simulator — Try Demo](https://911-simulator.com/). These are authoritative links from the owner's brief even though their site content could not be independently retrieved during initial research; access failures do not justify dropping the play/demo actions or inventing implementation details.
+- Parent-business presentation: [Dispatch-Dataworks/Public-Static](https://github.com/Dispatch-Dataworks/Public-Static), especially [`index.html`](https://github.com/Dispatch-Dataworks/Public-Static/blob/main/index.html) and [`portfolio.html`](https://github.com/Dispatch-Dataworks/Public-Static/blob/main/portfolio.html). Use this for authoritative family context, not personal-account discovery.
+- Far Haul source: [benjaminarthurt/FarHaul](https://github.com/benjaminarthurt/FarHaul), reviewed at commit [`9068eff5fb17ae5f7f59293da1db90300dfb7cc4`](https://github.com/benjaminarthurt/FarHaul/tree/9068eff5fb17ae5f7f59293da1db90300dfb7cc4) on 2026-10-04.
+- Current Far Haul description and screenshot captions: [`site/index.html` at that commit](https://github.com/benjaminarthurt/FarHaul/blob/9068eff5fb17ae5f7f59293da1db90300dfb7cc4/site/index.html), published as the [project website](https://benjaminarthurt.github.io/FarHaul/), with its [browser demo](https://benjaminarthurt.github.io/FarHaul/play/).
+- **Source discrepancy:** the repository's older README describes a builder-only prototype and lists flight as future work. The newer `site/index.html` and current source include freight contracts/economy, local flight/docking, and FTL jumps. The launch entry follows the updated source rather than repeating the stale README. Neither source makes walking, planetary landing, or EVA playable yet.
+- Authorized project-owned screenshots were fetched directly, without cloning, from `https://raw.githubusercontent.com/benjaminarthurt/FarHaul/9068eff5fb17ae5f7f59293da1db90300dfb7cc4/site/img/`: `builder-cargo.jpg`, `dock-economy.jpg`, `flight-run.jpg`, and `jump.jpg`. The project site explicitly identifies these as taken from the game. Existing Sharp optimized them into local WebP images; `builder-cargo.jpg` also supplies the 1200×630 gameplay social PNG. Permission comes from the studio owner. No third-party corporate logos, stock art, fonts, or other unrelated imagery were copied.
 
 Before enriching an entry, consult the **owner-supplied project website or repository** and confirm any details with Ben. For unavailable sources, keep the relevant fields omitted and retain the clearly marked local original fallback art. Record an asset's ownership/source with the approved asset handoff and a factual caption where useful; never label a placeholder as captured gameplay. Replace the temporary studio wordmark, badge, social card, and project covers when authorized originals are available.

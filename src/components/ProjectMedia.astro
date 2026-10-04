@@ -1,9 +1,84 @@
 ---
 import type { Project } from '../lib/schema';
-interface Props { project: Project }
+import MediaImage from './MediaImage.astro';
+interface Props {
+  project: Project;
+}
 const { project } = Astro.props;
 const gallery = [...project.gallery].sort((a, b) => a.order - b.order);
 ---
-{gallery.length > 0 && <section class="detail-section" aria-labelledby="gallery-heading"><div class="section-heading"><div><p class="eyebrow">A closer look</p><h2 id="gallery-heading">From the project</h2></div></div><div class="gallery-grid">{gallery.map((image) => <figure><a href={image.src} aria-label={`View full image: ${image.alt}`}><img src={image.src} alt={image.alt} width="960" height="600" loading="lazy" decoding="async" /></a><figcaption><span>{image.type}</span>{image.caption && <p>{image.caption}</p>}</figcaption></figure>)}</div></section>}
-{project.youtube && <section class="detail-section" aria-labelledby="video-heading"><p class="eyebrow">In motion</p><h2 id="video-heading">{project.youtube.title}</h2><div class="video-frame" data-video><img src={project.youtube.poster.src} alt={project.youtube.poster.alt} width="1280" height="720" loading="lazy" /><button class="video-button" type="button" data-youtube={project.youtube.id} data-video-title={project.youtube.title}><span class="play-icon" aria-hidden="true">▶</span><span>Load video<span class="video-disclosure">Connects to YouTube only when you choose to play</span></span></button></div><noscript><p>JavaScript is required for embedded video. <a href={`https://www.youtube.com/watch?v=${project.youtube.id}`}>Watch on YouTube</a>.</p></noscript></section>}
-<script>import '../scripts/video';</script>
+
+{gallery.length > 0 && (
+  <section class="detail-section" aria-labelledby="gallery-heading">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">A closer look</p>
+        <h2 id="gallery-heading">From the project</h2>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      {gallery.map((image) => (
+        <figure>
+          <a href={image.src} aria-label={`View full image: ${image.alt}`}>
+            <MediaImage
+              src={image.src}
+              alt={image.alt}
+              width={960}
+              height={600}
+              sizes="(max-width: 580px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 94px) / 2), 680px"
+              loading="lazy"
+            />
+          </a>
+          <figcaption>
+            <span>{image.type}</span>
+            {image.caption && <p>{image.caption}</p>}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+)}
+{project.youtube && (
+  <section class="detail-section" aria-labelledby="video-heading">
+    <p class="eyebrow">In motion</p>
+    <h2 id="video-heading">{project.youtube.title}</h2>
+    <div class="video-frame" data-video>
+      <MediaImage
+        src={project.youtube.poster.src}
+        alt={project.youtube.poster.alt}
+        width={1280}
+        height={720}
+        sizes="(max-width: 580px) calc(100vw - 40px), (max-width: 1100px) calc(100vw - 64px), 1380px"
+        loading="lazy"
+      />
+      <button
+        class="video-button"
+        type="button"
+        data-youtube={project.youtube.id}
+        data-video-title={project.youtube.title}
+      >
+        <span class="play-icon" aria-hidden="true">
+          ▶
+        </span>
+        <span>
+          Load video
+          <span class="video-disclosure">
+            Connects to YouTube only when you choose to play
+          </span>
+        </span>
+      </button>
+    </div>
+    <noscript>
+      <p>
+        JavaScript is required for embedded video.{' '}
+        <a href={`https://www.youtube.com/watch?v=${project.youtube.id}`}>
+          Watch on YouTube
+        </a>
+        .
+      </p>
+    </noscript>
+  </section>
+)}
+<script>
+  import '../scripts/video';
+</script>

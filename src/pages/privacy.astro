@@ -2,20 +2,103 @@
 import Layout from '../layouts/Layout.astro';
 import { site, feedbackHref } from '../config';
 ---
-<Layout title="Privacy" description="How Signal Foundry handles analytics consent, embedded video, and feedback. Your privacy choices are always yours.">
+
+<Layout
+  title="Privacy"
+  description="How Signal Foundry handles analytics consent, embedded video, and feedback. Your privacy choices are always yours."
+>
   <div class="container legal-page">
-    <header class="page-heading"><p class="eyebrow">Plain language / Clear choices</p><h1>Your privacy.<br /><span>Your signal.</span></h1><p>This is a static site, built to let you explore without creating an account. Optional services only connect when you choose them.</p></header>
+    <header class="page-heading">
+      <p class="eyebrow">Plain language / Clear choices</p>
+      <h1>
+        Your privacy.
+        <br />
+        <span>Your signal.</span>
+      </h1>
+      <p>
+        This is a static site, built to let you explore without creating an
+        account. Optional services only connect when you choose them.
+      </p>
+    </header>
     <div class="prose legal-prose">
-      <h2>Who we are</h2><p>{site.title} is {site.parent.relationship.toLowerCase()} <a href={site.parent.url}>{site.parent.name}</a>. You can contact us at <a href={`mailto:${site.email}`}>{site.email}</a> about this site or your privacy.</p>
-      <h2>Essential site behavior</h2><p>Project filters and the random bench run in your browser. Filter selections may appear in the page URL so you can share or bookmark a view. We do not operate accounts, a search service, a checkout, or a feedback database on this site.</p><p>Your analytics choice is saved in your browser’s local storage. This keeps your choice between visits; it is not an account or a cross-site tracking identifier. Clearing site storage clears that preference. The site’s hosting provider may process ordinary request information, such as IP addresses, for delivery and security.</p>
+      <h2>Who we are</h2>
+      <p>
+        {site.title} is {site.parent.relationship.toLowerCase()}{' '}
+        <a href={site.parent.url}>{site.parent.name}</a>. You can contact us at{' '}
+        <a href={`mailto:${site.email}`}>{site.email}</a> about this site or
+        your privacy.
+      </p>
+      <h2>Essential site behavior</h2>
+      <p>
+        Project filters and the random bench run in your browser. Filter
+        selections may appear in the page URL so you can share or bookmark a
+        view. We do not operate accounts, a search service, a checkout, or a
+        feedback database on this site.
+      </p>
+      <p>
+        Your analytics choice is saved in your browser’s local storage. This
+        keeps your choice between visits; it is not an account or a cross-site
+        tracking identifier. Clearing site storage clears that preference. The
+        site’s hosting provider may process ordinary request information, such
+        as IP addresses, for delivery and security.
+      </p>
       <h2>Optional analytics</h2>
-      <p>Google Analytics loads only after you accept analytics, and only when analytics is enabled and a measurement ID is configured. {site.analytics.enabled && site.analytics.measurementId ? 'Analytics is configured on this site.' : 'No active analytics measurement ID is currently configured.'}</p>
-      <p>If you accept, Google may receive page views and interaction events, such as project action links and feedback-link clicks. Events describe the action and, where applicable, the project slug; we do not send the contents of your email. Google may use cookies and process device, browser, and network information under its <a href="https://policies.google.com/privacy">privacy policy</a>.</p>
-      <p>Use “Privacy settings” in the footer to accept or decline. Declining prevents future analytics loads. Withdrawal does not retroactively delete information already sent to Google or necessarily remove cookies Google has already placed; you can clear those through your browser settings.</p>
-      <h2>Videos are your choice</h2><p>Video previews use local images. We do not contact YouTube just to display a preview. Choosing “Load video” connects to YouTube’s embedded player, which may receive your IP address and browser information and use its own storage. Embedded playback is separate from the analytics choice. See <a href="https://policies.google.com/privacy">Google’s privacy policy</a> for YouTube’s practices.</p>
-      <h2>External destinations</h2><p>Play, demo, store, source-code, and other external links take you to independent sites. Those destinations have their own privacy policies. Following a link is your choice, not a background connection.</p>
-      <h2>Feedback by email</h2><p>Feedback links open your email application with a suggested subject. Nothing is sent until you send the message. We receive the information you choose to include, such as your email address and message, through our email provider and use it to respond and consider your feedback. Please do not send sensitive information you do not want us to receive.</p>
-      <h2>Questions and requests</h2><p>For questions about information you have sent us, or to request access or deletion where applicable, <a href={feedbackHref('Signal Foundry — Privacy Request')}>email us</a>. We may need to verify that the request is yours. We’ll explain any legal or operational limits on fulfilling it.</p>
+      <p>
+        Google Analytics loads only after you accept analytics, and only when
+        analytics is enabled and a measurement ID is configured.{' '}
+        {site.analytics.enabled && site.analytics.measurementId
+          ? 'Analytics is configured on this site.'
+          : 'No active analytics measurement ID is currently configured.'}
+      </p>
+      <p>
+        If you accept, Google may receive page views and interaction events,
+        such as project action links and feedback-link clicks. Events describe
+        the action and, where applicable, the project slug; we do not send the
+        contents of your email. Google may use cookies and process device,
+        browser, and network information under its{' '}
+        <a href="https://policies.google.com/privacy">privacy policy</a>.
+      </p>
+      <p>
+        Use “Privacy settings” in the footer to accept or decline. Declining
+        prevents future analytics loads. Withdrawal does not retroactively
+        delete information already sent to Google or necessarily remove cookies
+        Google has already placed; you can clear those through your browser
+        settings.
+      </p>
+      <h2>Videos are your choice</h2>
+      <p>
+        Video previews use local images. We do not contact YouTube just to
+        display a preview. Choosing “Load video” connects to YouTube’s embedded
+        player, which may receive your IP address and browser information and
+        use its own storage. Embedded playback is separate from the analytics
+        choice. See{' '}
+        <a href="https://policies.google.com/privacy">
+          Google’s privacy policy
+        </a>{' '}
+        for YouTube’s practices.
+      </p>
+      <h2>External destinations</h2>
+      <p>
+        Play, demo, store, source-code, and other external links take you to
+        independent sites. Those destinations have their own privacy policies.
+        Following a link is your choice, not a background connection.
+      </p>
+      <h2>Feedback by email</h2>
+      <p>
+        Feedback links open your email application with a suggested subject.
+        Nothing is sent until you send the message. We receive the information
+        you choose to include, such as your email address and message, through
+        our email provider and use it to respond and consider your feedback.
+        Please do not send sensitive information you do not want us to receive.
+      </p>
+      <h2>Questions and requests</h2>
+      <p>
+        For questions about information you have sent us, or to request access
+        or deletion where applicable,{' '}
+        <a href={feedbackHref('Signal Foundry — Privacy Request')}>email us</a>.
+        We may need to verify that the request is yours. We’ll explain any legal
+        or operational limits on fulfilling it.
+      </p>
     </div>
   </div>
 </Layout>

@@ -16,6 +16,11 @@ hero:
 card:
   src: /assets/projects/911-simulator/cover.svg
   alt: Abstract dispatch signal illustration for 911 Simulator.
+actions:
+  - label: Try Demo
+    url: https://911-simulator.com/
+    kind: demo
+    priority: 0
 milestones:
   - category: Completed
     title: Playable demo
