@@ -1,7 +1,7 @@
 ---
 title: "Far Haul: From a Ship Builder to a World"
 slug: far-haul-from-ship-builder-to-a-world
-published: 2026-10-02
+published: "2026-10-02"
 draft: false
 excerpt: The first Far Haul prototype quickly expanded beyond modular ships into the data and simulation needed for a freight-driven universe.
 projects: [far-haul]
