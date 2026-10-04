@@ -43,7 +43,12 @@ const { small = false } = Astro.props;
       stroke-dasharray="3 12"
     />
     <path d="M40 260H600M320 40V480" stroke="#83f5e7" stroke-opacity=".17" />
-    <g stroke="url(#signal-gradient)" stroke-width="6" stroke-linecap="round">
+    <g
+      class="signal-wave-bars"
+      stroke="url(#signal-gradient)"
+      stroke-width="6"
+      stroke-linecap="round"
+    >
       <path d="M80 248V272M100 239V281M120 245V275M140 225V295M160 205V315M180 232V288M200 182V338M220 209V311M240 160V360M260 122V398M280 169V351M300 106V414M320 139V381M340 91V429M360 150V370M380 183V337M400 137V383M420 205V315M440 194V326M460 224V296M480 214V306M500 237V283M520 230V290M540 245V275M560 250V270" />
     </g>
     <g fill="#83f5e7">
