@@ -4,6 +4,9 @@ slug: if-then-dungeon-rules-before-code
 published: '2026-02-02'
 draft: false
 excerpt: If Then Dungeon started by defining its logic-first dungeon rules, engine structure, visual language, and characters before committing to a playable implementation.
+hero:
+  src: /assets/projects/if-then-dungeon/1770051277561.png
+  alt: Original If Then Dungeon concept artwork; not a game screenshot.
 projects: [if-then-dungeon]
 tags: [concept, design, logic, education]
 seo:
