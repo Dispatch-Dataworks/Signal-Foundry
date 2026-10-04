@@ -18,7 +18,10 @@ export const site = {
   ],
   socials: [
     { label: 'GitHub', href: 'https://github.com/Dispatch-Dataworks' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/dispatchdataworks' },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/company/dispatchdataworks',
+    },
   ] as { label: string; href: string }[],
   analytics: { enabled: true, measurementId: '' },
   defaultSocialImage: '/assets/brand/social.png',
