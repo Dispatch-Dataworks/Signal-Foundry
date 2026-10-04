@@ -1,7 +1,7 @@
 ---
-title: "WordWeave: From a Family Problem to a Playable Game"
+title: 'WordWeave: From a Family Problem to a Playable Game'
 slug: wordweave-from-family-problem-to-playable-game
-published: "2025-08-18"
+published: '2025-08-18'
 draft: false
 excerpt: WordWeave grew from a practical attempt to make English practice more engaging into a released browser word game with scoring, sharing, expanded word lists, and multiple puzzle modes.
 projects: [wordweave]

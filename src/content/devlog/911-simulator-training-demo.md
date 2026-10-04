@@ -1,7 +1,7 @@
 ---
-title: "911 Simulator: Building the Training Demo"
+title: '911 Simulator: Building the Training Demo'
 slug: 911-simulator-training-demo
-published: "2025-08-22"
+published: '2025-08-22'
 draft: false
 excerpt: The 911 Simulator prototype reached a training-demo milestone after a concentrated build of game state, orientation, authentication, rewards, and public-facing presentation.
 projects: [911-simulator]

@@ -1,7 +1,7 @@
 ---
-title: "If Then Dungeon: Rules Before Code"
+title: 'If Then Dungeon: Rules Before Code'
 slug: if-then-dungeon-rules-before-code
-published: "2026-02-02"
+published: '2026-02-02'
 draft: false
 excerpt: If Then Dungeon started by defining its logic-first dungeon rules, engine structure, visual language, and characters before committing to a playable implementation.
 projects: [if-then-dungeon]
