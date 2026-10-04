@@ -10,11 +10,27 @@ genres: [Educational, Dungeon adventure]
 audience: Intended for roughly ages 10–15; an informal design target, not a formal age rating.
 developer: Signal Foundry Games
 hero:
-  src: /assets/projects/if-then-dungeon/cover.svg
-  alt: Original concept illustration of branching logic paths through a dungeon grid, not a game screenshot.
+  src: /assets/projects/if-then-dungeon/1770051277561.png
+  alt: Original If Then Dungeon concept artwork; this is concept art, not a game screenshot.
 card:
-  src: /assets/projects/if-then-dungeon/cover.svg
-  alt: Abstract branching dungeon paths for the If Then Dungeon concept.
+  src: /assets/projects/if-then-dungeon/1770051277561.png
+  alt: Original concept artwork for If Then Dungeon.
+gallery:
+  - src: /assets/projects/if-then-dungeon/1770051277561.png
+    alt: Original concept artwork created for If Then Dungeon.
+    caption: Early visual development for the If Then Dungeon concept.
+    type: concept
+    order: 0
+  - src: /assets/projects/if-then-dungeon/1770051362666.png
+    alt: Additional original concept artwork created for If Then Dungeon.
+    caption: Additional visual exploration from the project's concept phase.
+    type: concept
+    order: 1
+  - src: /assets/projects/if-then-dungeon/1770051511110.png
+    alt: Additional original concept artwork created for If Then Dungeon.
+    caption: Additional visual exploration from the project's concept phase.
+    type: concept
+    order: 2
 milestones:
   - category: Current
     title: Working through the concept

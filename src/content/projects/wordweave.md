@@ -12,11 +12,11 @@ genres: [Word game, Educational]
 platforms: [Browser]
 developer: Signal Foundry Games
 hero:
-  src: /assets/projects/wordweave/cover.svg
-  alt: Official WordWeave project artwork with colorful woven letter tiles.
+  src: /assets/projects/wordweave/ww-logo2.png
+  alt: WordWeave logo artwork from the original project.
 card:
-  src: /assets/projects/wordweave/cover.svg
-  alt: WordWeave project artwork with colorful interlocking letter tiles.
+  src: /assets/projects/wordweave/ww-logo2.png
+  alt: WordWeave logo artwork from the original project.
 actions:
   - label: Play Now
     url: https://wordweave.games/
@@ -28,7 +28,7 @@ milestones:
     description: WordWeave is a released game, not a workshop concept.
 seo:
   description: Meet WordWeave, a released browser word game with a family learning story behind it.
-  image: /assets/projects/wordweave/cover.png
+  image: /assets/projects/wordweave/ww-logo2.png
 ---
 
 ## Overview

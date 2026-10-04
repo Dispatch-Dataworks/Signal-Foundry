@@ -11,11 +11,11 @@ tags: [simulation, decision-making]
 genres: [Simulation]
 developer: Signal Foundry Games
 hero:
-  src: /assets/projects/911-simulator/cover.svg
-  alt: Official 911 Simulator project artwork with a stylized dispatcher console and incident map.
+  src: /assets/projects/911-simulator/911sim.png
+  alt: 911 Simulator artwork from the original project.
 card:
-  src: /assets/projects/911-simulator/cover.svg
-  alt: 911 Simulator project artwork with a stylized dispatcher console and incident map.
+  src: /assets/projects/911-simulator/911sim.png
+  alt: 911 Simulator artwork from the original project.
 actions:
   - label: Try Demo
     url: https://911-simulator.com/
@@ -29,7 +29,7 @@ milestones:
     title: Developing the rest of the game
 seo:
   description: 911 Simulator is a playable emergency-dispatch simulation demo in active development.
-  image: /assets/projects/911-simulator/cover.png
+  image: /assets/projects/911-simulator/911sim.png
 ---
 
 ## Overview

@@ -4,6 +4,9 @@ slug: 911-simulator-training-demo
 published: '2025-08-22'
 draft: false
 excerpt: The 911 Simulator prototype reached a training-demo milestone after a concentrated build of game state, orientation, authentication, rewards, and public-facing presentation.
+hero:
+  src: /assets/projects/911-simulator/911sim.png
+  alt: 911 Simulator artwork from the original project.
 projects: [911-simulator]
 tags: [development, simulation, demo]
 seo:
