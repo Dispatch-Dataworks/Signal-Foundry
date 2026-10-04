@@ -1,61 +1,10 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="1200"
-  height="800"
-  viewBox="0 0 1200 800"
-  role="img"
-  aria-labelledby="title desc"
->
-  <title id="title">911 Simulator — dispatch signal</title>
-  <desc id="desc">
-    Original schematic placeholder illustration of an abstract dispatch signal,
-    concentric scan rings, and incident markers. Not an actual interface, game
-    screenshot, or final logo.
-  </desc>
-  <defs>
-    <linearGradient id="bg" x2="1" y2="1">
-      <stop stop-color="#102532" />
-      <stop offset="1" stop-color="#08121c" />
-    </linearGradient>
-    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-      <path d="M60 0H0V60" fill="none" stroke="#70b9db" stroke-opacity=".08" />
-    </pattern>
-  </defs>
-  <path d="M0 0h1200v800H0z" fill="url(#bg)" />
-  <path d="M0 0h1200v800H0z" fill="url(#grid)" />
-  <g fill="none" stroke="#6bb5ce">
-    <circle cx="600" cy="390" r="100" opacity=".5" />
-    <circle cx="600" cy="390" r="185" opacity=".28" />
-    <circle cx="600" cy="390" r="270" opacity=".16" />
-    <path d="M290 390h620M600 100v580" opacity=".15" />
-    <path
-      d="M600 390l200-150a250 250 0 0 1 49 108Z"
-      fill="#6bb5ce"
-      fill-opacity=".07"
-      stroke-opacity=".3"
-    />
-  </g>
-  <path
-    d="M130 425h135l26-38 30 78 34-131 40 101h119l33-59 40 104 37-184 42 129h194l24-41 30 73 32-32h97"
-    fill="none"
-    stroke="#f2ac73"
-    stroke-width="4"
-    stroke-linejoin="round"
-  />
-  <g fill="#0b1c28" stroke="#e99176" stroke-width="2">
-    <path d="m430 212 13 23-13 23-13-23z" />
-    <path d="m802 260 13 23-13 23-13-23z" />
-    <path d="m755 540 13 23-13 23-13-23z" />
-  </g>
-  <g font-family="monospace" font-size="13" letter-spacing="2" fill="#91aeba">
-    <text x="455" y="240">SIGNAL / A</text>
-    <text x="827" y="288">SIGNAL / B</text>
-    <text x="780" y="568">SIGNAL / C</text>
-  </g>
-  <g font-family="monospace" font-size="15" letter-spacing="3">
-    <text x="55" y="65" fill="#a1c6d7">SIGNAL FOUNDRY / 911 SIMULATOR</text>
-    <text x="55" y="745" fill="#d2a48a">
-      SCHEMATIC ILLUSTRATION · NOT GAMEPLAY
-    </text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+<title id="title">911 Simulator</title><desc id="desc">Official Signal Foundry promotional artwork for 911 Simulator showing a stylized dispatcher console and incident map.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07121d"/><stop offset=".55" stop-color="#102839"/><stop offset="1" stop-color="#120d12"/></linearGradient><radialGradient id="red"><stop stop-color="#ff654f" stop-opacity=".32"/><stop offset="1" stop-color="#ff654f" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="800" fill="url(#bg)"/><circle cx="1010" cy="130" r="300" fill="url(#red)"/><text x="70" y="110" fill="#70dff7" font-family="ui-monospace,monospace" font-size="20" font-weight="700" letter-spacing="5">SIGNAL FOUNDRY / PLAYABLE DEMO</text>
+<text x="68" y="214" fill="#fff" font-family="system-ui,sans-serif" font-size="92" font-weight="900" letter-spacing="-4">911 <tspan fill="#ff6757">SIMULATOR</tspan></text><text x="74" y="262" fill="#adc2ca" font-family="system-ui,sans-serif" font-size="27">Take the call. Read the scene. Make the decision.</text>
+<g transform="translate(70 330)"><rect width="1060" height="360" rx="22" fill="#071016" stroke="#315467" stroke-width="2"/><rect x="26" y="28" width="350" height="304" rx="12" fill="#0e1b24"/><text x="48" y="62" fill="#75dff4" font-family="ui-monospace,monospace" font-size="14" letter-spacing="3">ACTIVE CALLS</text>
+<g font-family="system-ui,sans-serif"><rect x="48" y="88" width="306" height="68" rx="9" fill="#172c37"/><circle cx="74" cy="122" r="8" fill="#ff6252"/><text x="96" y="116" fill="#fff" font-size="18" font-weight="700">Priority response</text><text x="96" y="140" fill="#8da8b2" font-size="14">Caller connected · 00:18</text><rect x="48" y="170" width="306" height="68" rx="9" fill="#10232c"/><circle cx="74" cy="204" r="8" fill="#f1b94f"/><text x="96" y="198" fill="#fff" font-size="18" font-weight="700">Unit requested</text><text x="96" y="222" fill="#8da8b2" font-size="14">Awaiting assignment</text></g>
+<g transform="translate(404 28)"><rect width="630" height="304" rx="12" fill="#0a1921"/><path d="M0 76h630M0 152h630M0 228h630M105 0v304M210 0v304M315 0v304M420 0v304M525 0v304" stroke="#183541"/><path d="M42 262C128 188 176 224 246 164S390 112 454 138s98-46 145-78" fill="none" stroke="#3c758a" stroke-width="5"/><g fill="#ff6554" stroke="#ffd0ca" stroke-width="2"><circle cx="240" cy="162" r="10"/><circle cx="456" cy="138" r="10"/></g><g fill="#68d8f1"><circle cx="167" cy="211" r="8"/><circle cx="540" cy="94" r="8"/></g><text x="24" y="30" fill="#7397a5" font-family="ui-monospace,monospace" font-size="13" letter-spacing="3">DISPATCH MAP / LIVE INCIDENT VIEW</text></g></g>
+<text x="74" y="744" fill="#718c94" font-family="ui-monospace,monospace" font-size="14" letter-spacing="3">OFFICIAL PROJECT ARTWORK · SIGNAL FOUNDRY GAMES</text>
 </svg>
