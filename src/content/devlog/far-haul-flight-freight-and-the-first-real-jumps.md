@@ -4,6 +4,9 @@ slug: far-haul-flight-freight-and-the-first-real-jumps
 published: '2026-10-04'
 draft: false
 excerpt: 'Far Haul crossed an important line this week: the freight simulation, hands-on flight, local hauling, and interstellar jumps are starting to operate as one game.'
+hero:
+  src: /assets/projects/far-haul/farhaul.png
+  alt: Far Haul artwork from the current project.
 projects: [far-haul]
 tags: [development, flight, economy, simulation]
 seo:
