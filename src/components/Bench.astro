@@ -1,0 +1,49 @@
+---
+import type { Entry, Project } from '../lib/schema';
+import { benchEligible } from '../lib/content';
+import ProjectCard from './ProjectCard.astro';
+interface Props {
+  projects: Entry<Project>[];
+}
+const projects = Astro.props.projects.filter((entry) =>
+  benchEligible(entry.data),
+);
+---
+
+<div class="bench-panel">
+  <div class="bench-copy">
+    <p class="eyebrow">
+      <span class="live-dot" aria-hidden="true"></span> A signal from the bench
+    </p>
+    <h2>
+      Follow your
+      <br />
+      curiosity.
+    </h2>
+    <p>
+      No algorithm. No rankings. Just one of the things we’re actively building,
+      picked at random.
+    </p>
+    <a class="text-link" href="/workshop/">
+      Inside the workshop <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+  <div data-bench>
+    {projects.length ? (
+      projects.map((entry, index) => (
+        <div data-bench-item hidden={index > 0}>
+          <ProjectCard project={entry.data} compact />
+        </div>
+      ))
+    ) : (
+      <div class="empty-state">
+        <h3>The bench is quiet.</h3>
+        <p>New experiments will appear here when they’re ready to share.</p>
+        <a href="/games/">Explore the games →</a>
+      </div>
+    )}
+  </div>
+</div>
+<script>
+  import '../scripts/bench';
+</script>

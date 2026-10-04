@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FilterIndex from '../../components/FilterIndex.astro';
+import { getSiteContent } from '../../lib/data';
+const { projects } = await getSiteContent();
+---
+
+<Layout
+  title="The Workshop"
+  description="Ideas still taking shape: prototypes, concepts, and experiments from the Signal Foundry workshop."
+>
+  <div class="container">
+    <header class="page-heading">
+      <p class="eyebrow">Works in progress / Possibilities in motion</p>
+      <h1>
+        Welcome to
+        <br />
+        <span>the workshop.</span>
+      </h1>
+      <p>
+        Some ideas need room to become themselves. This is where we test
+        systems, build prototypes, and follow interesting questions.
+      </p>
+      <div class="heading-note">
+        <span class="live-dot" aria-hidden="true"></span> Concepts are not
+        releases. Plans are not promises.
+      </div>
+    </header>
+    <section class="index-section" aria-labelledby="workshop-heading">
+      <h2 id="workshop-heading" class="sr-only">
+        Browse workshop projects
+      </h2>
+      <FilterIndex
+        projects={projects.filter(
+          (entry) => entry.data.collection === 'workshop',
+        )}
+      />
+    </section>
+  </div>
+</Layout>

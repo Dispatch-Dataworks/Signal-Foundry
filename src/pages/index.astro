@@ -1,0 +1,131 @@
+---
+import { getCollection, render } from 'astro:content';
+import { site, feedbackHref } from '../config';
+import { getSiteContent } from '../lib/data';
+import Layout from '../layouts/Layout.astro';
+import Waveform from '../components/Waveform.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PostCard from '../components/PostCard.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Bench from '../components/Bench.astro';
+const { projects, posts } = await getSiteContent();
+const featured = site.featuredProjects.flatMap((slug) =>
+  projects.filter(
+    (entry) => entry.data.slug === slug && entry.data.status !== 'Archived',
+  ),
+);
+const about = (await getCollection('about')).find(
+  (entry) => entry.id === 'home',
+);
+const AboutContent = about ? (await render(about)).Content : undefined;
+---
+
+<Layout>
+  <section class="hero container" aria-labelledby="hero-heading">
+    <div class="hero-copy">
+      <p class="eyebrow">
+        <span class="live-dot" aria-hidden="true"></span> {site.title} /
+        Independent games
+      </p>
+      <h1 id="hero-heading">
+        Good games.
+        <br />
+        <span>Clear signals.</span>
+      </h1>
+      <p class="hero-description">{site.tagline}</p>
+      <div class="button-row">
+        <a class="button primary" href="/games/">
+          Find your next game <span aria-hidden="true">↗</span>
+        </a>
+        <a class="button secondary" href="/workshop/">
+          Enter the workshop <span aria-hidden="true">→</span>
+        </a>
+      </div>
+      <div class="hero-footnote">
+        <span class="mono">EST. IN CURIOSITY</span>
+        <span class="rule"></span>
+        <span>Small studio. Long-range thinking.</span>
+      </div>
+    </div>
+    <Waveform />
+  </section>
+  <div class="signal-strip">
+    <div class="container">
+      <span>THINK DEEPLY.</span>
+      <span class="strip-cross" aria-hidden="true">
+        +
+      </span>
+      <span>PLAY CURIOUSLY.</span>
+      <span class="strip-cross" aria-hidden="true">
+        +
+      </span>
+      <span>MAKE SOMETHING WORTH PLAYING.</span>
+    </div>
+  </div>
+  <section class="container section" aria-labelledby="featured-heading">
+    <SectionHeading
+      id="featured-heading"
+      eyebrow="01 / Selected signals"
+      title="Made to make you think."
+      description="A few projects we’re excited to share. Different worlds, one underlying curiosity."
+      href="/games/"
+      linkText="Explore the games"
+    />
+    <div class="card-grid">
+      {featured.map((entry) => (
+        <ProjectCard project={entry.data} />
+      ))}
+    </div>
+  </section>
+  {site.features.bench && (
+    <section class="container section bench-section">
+      <Bench projects={projects} />
+    </section>
+  )}
+  {posts.length > 0 && (
+    <section class="container section">
+      <SectionHeading
+        eyebrow="02 / Notes from the foundry"
+        title="Behind the build."
+        description="Decisions, discoveries, and the work between playable moments."
+        href="/devlog/"
+        linkText="All field notes"
+      />
+      <div class="card-grid post-grid">
+        {posts.slice(0, 3).map((entry, index) => (
+          <PostCard post={entry.data} number={index} />
+        ))}
+      </div>
+    </section>
+  )}
+  <section
+    class="container section about-section"
+    id="about"
+    aria-labelledby="about-heading"
+  >
+    <div class="about-intro">
+      <p class="eyebrow">03 / The people behind the signal</p>
+      <h2 id="about-heading">
+        {about?.data.heading ?? 'A workshop, not a content factory.'}
+      </h2>
+      <div class="about-glyph" aria-hidden="true">
+        S<span>↗</span>F
+      </div>
+    </div>
+    <div>
+      <div class="prose about-prose">
+        {AboutContent ? (
+          <AboutContent />
+        ) : (
+          <p>
+            We make the games we want to play: thoughtful experiences, curious
+            systems, and experiments worth exploring.
+          </p>
+        )}
+      </div>
+      <a class="text-link" data-track="feedback" href={feedbackHref()}>
+        Send a signal <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+</Layout>

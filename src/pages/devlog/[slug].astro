@@ -1,0 +1,147 @@
+---
+import { render } from 'astro:content';
+import type { InferGetStaticPropsType } from 'astro';
+import { getSiteContent } from '../../lib/data';
+import { feedbackHref, site } from '../../config';
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import MediaImage from '../../components/MediaImage.astro';
+import PostCard from '../../components/PostCard.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+export async function getStaticPaths() {
+  const { projects, posts } = await getSiteContent();
+  return posts.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry, projects, posts },
+  }));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { entry, projects, posts } = Astro.props;
+const post = entry.data;
+const { Content } = await render(entry);
+const related = projects.filter((project) =>
+  post.projects.includes(project.data.slug),
+);
+const morePosts = posts
+  .filter(
+    (other) =>
+      other.data.slug !== post.slug &&
+      (post.projects.length === 0 ||
+        other.data.projects.some((slug) => post.projects.includes(slug))),
+  )
+  .slice(0, 3);
+const date = (value: string) =>
+  new Date(`${value}T00:00:00Z`).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+const image = post.seo?.image ?? post.hero?.src ?? site.defaultSocialImage;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  description: post.excerpt,
+  datePublished: post.published,
+  dateModified: post.updated ?? post.published,
+  image: new URL(image, site.url).href,
+  url: new URL(`/devlog/${post.slug}/`, site.url).href,
+  author: { '@type': 'Organization', name: site.title, url: site.url },
+  publisher: { '@type': 'Organization', name: site.title, url: site.url },
+};
+---
+
+<Layout
+  title={post.seo?.title ?? post.title}
+  description={post.seo?.description ?? post.excerpt}
+  image={image}
+  structuredData={schema}
+>
+  <article class="container article-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="/devlog/">Devlog</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Field note</span>
+    </nav>
+    <header class="article-heading">
+      <p class="eyebrow">Notes from the foundry</p>
+      <h1>{post.title}</h1>
+      <p class="article-lead">{post.excerpt}</p>
+      <div class="article-meta">
+        <time datetime={post.published}>{date(post.published)}</time>
+        {post.updated && (
+          <span>
+            Updated <time datetime={post.updated}>{date(post.updated)}</time>
+          </span>
+        )}
+        <span>By {site.title}</span>
+      </div>
+      {post.tags.length > 0 && (
+        <div class="tag-list">
+          {post.tags.map((tag) => (
+            <a href={`/devlog/?tag=${encodeURIComponent(tag)}`}>{tag}</a>
+          ))}
+        </div>
+      )}
+    </header>
+    {post.hero && (
+      <figure class="article-art">
+        <MediaImage
+          src={post.hero.src}
+          alt={post.hero.alt}
+          width={1200}
+          height={750}
+          sizes="(max-width: 580px) calc(100vw - 40px), (max-width: 1100px) calc(100vw - 64px), 1000px"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </figure>
+    )}
+    <div class="prose article-prose">
+      <Content />
+    </div>
+    <div class="article-signoff">
+      <span class="mono">END OF TRANSMISSION</span>
+      <a
+        class="text-link"
+        href={feedbackHref(`Signal Foundry — ${post.title} Feedback`)}
+        data-track="feedback"
+      >
+        Reply by email <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </article>
+  <div class="container">
+    {related.length > 0 && (
+      <section class="section">
+        <SectionHeading
+          eyebrow="The work behind the words"
+          title="Explore the projects."
+        />
+        <div class="card-grid">
+          {related.map((project) => (
+            <ProjectCard project={project.data} />
+          ))}
+        </div>
+      </section>
+    )}
+    {morePosts.length > 0 && (
+      <section class="section">
+        <SectionHeading
+          eyebrow="Keep reading"
+          title="More from the foundry."
+          href="/devlog/"
+          linkText="All field notes"
+        />
+        <div class="card-grid post-grid">
+          {morePosts.map((entry) => (
+            <PostCard post={entry.data} />
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</Layout>

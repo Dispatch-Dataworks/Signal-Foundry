@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FilterIndex from '../../components/FilterIndex.astro';
+import { getSiteContent } from '../../lib/data';
+const { projects } = await getSiteContent();
+---
+
+<Layout
+  title="Games"
+  description="Explore Signal Foundry’s playable games, demos, and releases. Thoughtful experiences for curious players."
+>
+  <div class="container">
+    <header class="page-heading">
+      <p class="eyebrow">The playable signals</p>
+      <h1>
+        Made for
+        <br />
+        <span>the curious.</span>
+      </h1>
+      <p>
+        Games you can get your hands on. Explore the releases and playable
+        builds; each project tells you exactly where it stands.
+      </p>
+      <div class="heading-note">
+        <span class="live-dot" aria-hidden="true"></span> Looking for what’s
+        next? <a href="/workshop/">Step into the workshop →</a>
+      </div>
+    </header>
+    <section class="index-section" aria-labelledby="games-heading">
+      <h2 id="games-heading" class="sr-only">
+        Browse games
+      </h2>
+      <FilterIndex
+        projects={projects.filter((entry) => entry.data.collection === 'games')}
+      />
+    </section>
+  </div>
+</Layout>
