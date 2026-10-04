@@ -12,11 +12,11 @@ genres: [Word game, Educational]
 platforms: [Browser]
 developer: Signal Foundry Games
 hero:
-  src: /assets/projects/wordweave/ww-logo2.png
-  alt: WordWeave logo artwork from the original project.
+  src: /assets/projects/wordweave/cover.png
+  alt: WordWeave letter tiles on a dark schematic background.
 card:
-  src: /assets/projects/wordweave/ww-logo2.png
-  alt: WordWeave logo artwork from the original project.
+  src: /assets/projects/wordweave/cover.png
+  alt: WordWeave letter tiles on a dark schematic background.
 actions:
   - label: Play Now
     url: https://wordweave.games/
