@@ -18,4 +18,4 @@ The project also settled on **Silver Lake County** as its fictional setting and 
 
 This was not the point where 911 Simulator became a finished game. It was the point where the underlying pieces were assembled well enough to put a playable demo in front of someone and evaluate the idea from the dispatcher's side of an emergency rather than from the field.
 
-That remains the useful distinction for the project today: there is something real to try, while the larger simulator is still active development.
+That remains the useful distinction for the project today: there is something real to try, while the larger simulator is still in active development.
