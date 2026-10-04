@@ -12,10 +12,10 @@ genres: [Simulation]
 developer: Signal Foundry Games
 hero:
   src: /assets/projects/911-simulator/cover.svg
-  alt: Original schematic illustration of a dispatch signal and abstract incident markers, not a game screenshot.
+  alt: Official 911 Simulator project artwork with a stylized dispatcher console and incident map.
 card:
   src: /assets/projects/911-simulator/cover.svg
-  alt: Abstract dispatch signal illustration for 911 Simulator.
+  alt: 911 Simulator project artwork with a stylized dispatcher console and incident map.
 actions:
   - label: Try Demo
     url: https://911-simulator.com/
@@ -41,5 +41,3 @@ seo:
 The starting point is the dispatcher's perspective: a simulation centered on emergency response rather than another game about being the person out in the field.
 
 The demo is a way to meet the project as it stands today. It should not be mistaken for a complete release or a promise that every planned feature is already implemented.
-
-The illustration on this page is an original schematic placeholder—not a screenshot or final game logo.
