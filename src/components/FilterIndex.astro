@@ -65,27 +65,34 @@ const total = projects?.length ?? posts?.length ?? 0;
     aria-label={projectMode ? 'Filter projects' : 'Filter devlog entries'}
   >
     <div class="filter-fields">
-      {fields.map((field) => (
-        <label>
-          <span>{field.label}</span>
-          <select name={field.name}>
-            <option value="">
-              All{' '}
-              {field.label.toLowerCase() === 'development'
-                ? 'development states'
-                : `${field.label.toLowerCase()}${field.label === 'Status' ? 'es' : 's'}`}
-            </option>
-            {field.values.map((value) => (
-              <option value={value}>
-                {field.name === 'project'
-                  ? (projectOptions.find((p) => p.data.slug === value)?.data
-                      .title ?? value)
-                  : value}
+      {fields
+        .filter((field) => field.values.length === 0)
+        .map((field) => (
+          <input type="hidden" name={field.name} value="" />
+        ))}
+      {fields
+        .filter((field) => field.values.length > 0)
+        .map((field) => (
+          <label>
+            <span>{field.label}</span>
+            <select name={field.name}>
+              <option value="">
+                All{' '}
+                {field.label.toLowerCase() === 'development'
+                  ? 'development states'
+                  : `${field.label.toLowerCase()}${field.label === 'Status' ? 'es' : 's'}`}
               </option>
-            ))}
-          </select>
-        </label>
-      ))}
+              {field.values.map((value) => (
+                <option value={value}>
+                  {field.name === 'project'
+                    ? (projectOptions.find((p) => p.data.slug === value)?.data
+                        .title ?? value)
+                    : value}
+                </option>
+              ))}
+            </select>
+          </label>
+        ))}
     </div>
     <div class="filter-bottom">
       {projectMode && (
