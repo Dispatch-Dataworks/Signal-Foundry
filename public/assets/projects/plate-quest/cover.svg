@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Plate Quest project artwork</title>
+<desc id="desc">A dark road-trip game interface with a stylized license plate, route line, map markers, and collection counters.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0d1522"/><stop offset="1" stop-color="#16243a"/></linearGradient></defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<path d="M0 555 C210 455 350 610 560 500 S910 390 1200 475" fill="none" stroke="#314561" stroke-width="54" opacity=".65"/>
+<path d="M0 555 C210 455 350 610 560 500 S910 390 1200 475" fill="none" stroke="#ffc857" stroke-width="5" stroke-dasharray="18 18" opacity=".9"/>
+<g transform="translate(95 82)"><text x="0" y="0" fill="#ffc857" font-family="system-ui,sans-serif" font-size="25" font-weight="800" letter-spacing="4">ROAD TRIP COLLECTION GAME</text><text x="0" y="82" fill="#f4f7fb" font-family="system-ui,sans-serif" font-size="82" font-weight="900">PLATE QUEST</text><text x="3" y="126" fill="#aebbd0" font-family="system-ui,sans-serif" font-size="26">Spot it. Collect it. See how far it traveled.</text></g>
+<g transform="translate(735 90) rotate(5)"><rect width="350" height="205" rx="22" fill="#f3f5f7" stroke="#ffc857" stroke-width="9"/><rect x="18" y="18" width="314" height="169" rx="12" fill="none" stroke="#152238" stroke-width="4"/><text x="175" y="74" text-anchor="middle" fill="#152238" font-family="system-ui,sans-serif" font-size="24" font-weight="800">SIGNAL FOUNDRY</text><text x="175" y="142" text-anchor="middle" fill="#152238" font-family="monospace" font-size="58" font-weight="900" letter-spacing="8">QUEST</text></g>
+<g transform="translate(95 330)" font-family="system-ui,sans-serif"><rect width="530" height="135" rx="20" fill="#16243a" stroke="#314561" stroke-width="2"/><g transform="translate(30 30)"><text fill="#ffc857" font-size="38" font-weight="900">17</text><text y="31" fill="#aebbd0" font-size="16">PLATES</text></g><g transform="translate(170 30)"><text fill="#ffc857" font-size="38" font-weight="900">842</text><text y="31" fill="#aebbd0" font-size="16">MILES</text></g><g transform="translate(325 30)"><text fill="#ffc857" font-size="38" font-weight="900">2,460</text><text y="31" fill="#aebbd0" font-size="16">POINTS</text></g></g>
+<g fill="#ff5d73" stroke="#fff" stroke-width="4"><circle cx="760" cy="445" r="13"/><circle cx="985" cy="525" r="13"/></g>
+</svg>
