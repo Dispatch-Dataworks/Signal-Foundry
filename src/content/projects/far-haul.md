@@ -1,7 +1,7 @@
 ---
 title: Far Haul
 slug: far-haul
-excerpt: Build a modular ship, take freight contracts, fly local runs, and make star jumps in a playable browser prototype—with a much larger exploration vision ahead.
+excerpt: Build a modular ship, haul freight, land on moons, work on foot, and make star jumps in a standalone Windows prototype with a much larger frontier ahead.
 collection: games
 status: Playable Demo
 developmentState: Active Development
@@ -10,7 +10,7 @@ pinned: true
 order: 1
 tags: [exploration, science-fiction, simulation]
 genres: [Freight simulation, Exploration]
-platforms: [Browser, Windows]
+platforms: [Windows]
 developer: Signal Foundry Games
 version: v0.1.0
 engine: Godot
@@ -22,11 +22,7 @@ card:
   src: /assets/projects/far-haul/builder-cargo.webp
   alt: The modular ship builder in the playable Far Haul prototype.
 actions:
-  - label: Try Demo
-    url: https://benjaminarthurt.github.io/FarHaul/play/
-    kind: demo
-    priority: 0
-  - label: Project website and help
+  - label: Download for Windows\n    url: https://github.com/benjaminarthurt/FarHaul/releases/latest\n    kind: demo\n    priority: 0\n  - label: Project website and help
     url: https://benjaminarthurt.github.io/FarHaul/
     kind: website
     priority: 10
@@ -66,7 +62,7 @@ milestones:
     description: A playable starting point for the freight and exploration idea.
   - category: Current
     title: Developing beyond the proof of concept
-    description: The current prototype includes modular shipbuilding, freight contracts and economy, local flight, docking, FTL jumps, and first-person movement through the ship.
+    description: The current prototype includes modular shipbuilding, freight and economy, local flight, docking, FTL jumps, first-person ship interiors, moon landing and liftoff, surface exploration and work, walkable ports, and persistent ship damage.
   - category: Planned
     title: A broader interstellar freight and exploration experience
     description: Frontier exploration, planetary landing, and EVA repair remain design directions beyond the implemented freight, flight, jump, and first-person ship-interior systems.
@@ -80,11 +76,11 @@ seo:
 
 ## Overview
 
-Far Haul is an open-world sci-fi freight and exploration project with a playable browser prototype and a portable Windows build. Active development continues beyond that first slice.
+Far Haul is an open-world sci-fi freight and exploration project with a playable standalone Windows prototype. The earlier browser build has been retired so development can focus on desktop quality, performance, presentation, and the physical game world.
 
-The current v0.1.0 prototype lets you build a modular ship on a 3 m grid, check its engineering, and use undo, redo, and autosave. Freight contracts and a simulated economy give the ship work to do. You can fly local routes with burn, flip, and brake maneuvers, use time compression, dock, make FTL jumps once your ship is equipped for them, and leave the helm to walk through the ship in first person.
+The current v0.1.0 prototype lets you build a modular ship on a 3 m grid, check its engineering, and use undo, redo, and autosave. Freight contracts and a simulated economy give the ship work to do. You can fly local routes, dock, make FTL jumps, leave the helm to walk through the ship, land on moons, explore and work on foot, visit surface sites, and walk through ports, habs, and camp facilities.
 
-The larger vision is a first-person interstellar freight and exploration game. Walking through the ship now has an initial playable implementation. Planetary landing and exploration, EVA repairs, and the broader frontier experience are **not implemented** and remain the direction of travel.
+The larger vision is a first-person interstellar freight and exploration game. Walking through ships, moon landing, surface exploration, suit systems, and surface work now have playable implementations. EVA ship repair and the broader frontier experience remain directions beyond the current prototype.
 
 ## What Makes It Different
 
