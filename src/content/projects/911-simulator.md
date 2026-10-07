@@ -1,9 +1,9 @@
 ---
 title: 911 Simulator
 slug: 911-simulator
-excerpt: A playable demo of an emergency-dispatch simulation, with the rest of the game still in active development.
+excerpt: A full playable emergency-dispatch game with individual calls, multi-call shifts, live units, progression, statistics, and leaderboards.
 collection: games
-status: Playable Demo
+status: Released
 developmentState: Active Development
 featured: true
 order: 3
@@ -17,27 +17,34 @@ card:
   src: /assets/projects/911-simulator/911sim.png
   alt: 911 Simulator artwork from the original project.
 actions:
-  - label: Try Demo
+  - label: Play Now
     url: https://911-simulator.com/
-    kind: demo
+    kind: play
     priority: 0
 milestones:
   - category: Completed
-    title: Playable demo
-    description: A demo is available; this is not a finished release.
+    title: Version 1 released
+    description: The full playable first release expands the original training demo with Play mode, multi-call Shift mode, live units and incidents, progression, statistics, difficulty settings, challenges, and leaderboards.
   - category: Current
-    title: Developing the rest of the game
+    title: Expanding and refining the released game
+    description: Active development continues with additional call content, story series, balance, accessibility, production hardening, and quality improvements.
 seo:
-  description: 911 Simulator is a playable emergency-dispatch simulation demo in active development.
+  description: 911 Simulator is a released emergency-dispatch game with individual calls, multi-call shifts, live units, progression, statistics, and leaderboards.
   image: /assets/projects/911-simulator/911sim.png
 ---
 
 ## Overview
 
-911 Simulator is an emergency-dispatch simulation with a playable demo. Development is active, and the rest of the game is still being developed.
+911 Simulator is a released emergency-dispatch game set in fictional Silver Lake County. The original training demo has grown into a full playable first version with individual-call Play mode and multi-call Shift mode.
+
+Play mode draws from a large library of emergency and non-emergency call flows with branching caller states, panic, conditional dialogue, dispatch decisions, scoring, and story-series support. Shift mode puts several systems together at once: calls ring into a queue, callers can wait or hang up, incidents remain active after the phone call ends, and police, fire, EMS, and other units travel across the county and remain committed until their work is done.
+
+Player statistics now span calls and shifts, with grades, XP, ranks, category mastery, streaks, rewards, daily challenges, and leaderboards. Difficulty modes change how much information and assistance the player receives.
 
 ## What Makes It Different
 
 The starting point is the dispatcher's perspective: a simulation centered on emergency response rather than another game about being the person out in the field.
 
-The demo is a way to meet the project as it stands today. It should not be mistaken for a complete release or a promise that every planned feature is already implemented.
+The first release is designed around the workload rather than only the conversation. In Shift mode, answering the phone is just the beginning: several calls can compete for attention while earlier incidents are still consuming units. Unit skills, travel time, road routing, jurisdiction and mutual aid all affect the response. Neglected incidents can worsen and generate follow-up calls.
+
+That turns the original call-taking concept into a broader dispatch game while keeping the dispatcher's perspective at the center.
