@@ -22,7 +22,11 @@ card:
   src: /assets/projects/far-haul/builder-cargo.webp
   alt: The modular ship builder in the playable Far Haul prototype.
 actions:
-  - label: Download for Windows\n    url: https://github.com/benjaminarthurt/FarHaul/releases/latest\n    kind: demo\n    priority: 0\n  - label: Project website and help
+  - label: Download for Windows
+    url: https://github.com/benjaminarthurt/FarHaul/releases/latest
+    kind: demo
+    priority: 0
+  - label: Project website and help
     url: https://benjaminarthurt.github.io/FarHaul/
     kind: website
     priority: 10
