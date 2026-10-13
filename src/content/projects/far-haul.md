@@ -12,7 +12,7 @@ tags: [exploration, science-fiction, simulation]
 genres: [Freight simulation, Exploration]
 platforms: [Windows]
 developer: Signal Foundry Games
-version: v0.2.0
+version: v0.3.0
 engine: Godot
 technologies: [Godot, GDScript]
 hero:
@@ -58,15 +58,15 @@ gallery:
 requirements:
   minimum:
     input: Mouse and keyboard; touch controls are not implemented.
-    network: Internet access to load the browser demo.
-    notes: The project recommends a laptop or desktop. Browser saves stay on that browser and device.
+    network: No network connection is required to run the downloaded Windows build.
+    notes: Download the Windows ZIP, extract it, and run FarHaul.exe. Saves are stored in a Far Haul saves folder next to the executable; earlier saves remain compatible.
 milestones:
   - category: Completed
     title: Playable proof of concept
     description: A playable starting point for the freight and exploration idea.
   - category: Current
-    title: Developing beyond the proof of concept
-    description: The current prototype includes modular shipbuilding, freight and economy, local flight, docking, FTL jumps, first-person ship interiors, moon landing and liftoff, surface exploration and work, walkable ports, and persistent ship damage.
+    title: Windows prototype v0.3.0 released
+    description: Version 0.3.0 adds recognizable Earth, Luna and Mars, new Venus, Jupiter and Saturn freight destinations, distinctive worlds throughout known space, destination-specific arrival scenery, and hull enclosure fixes. Existing modular shipbuilding, flight, docking, FTL travel, moon landings and first-person exploration remain playable.
   - category: Planned
     title: A broader interstellar freight and exploration experience
     description: Frontier exploration, planetary landing, and EVA repair remain design directions beyond the implemented freight, flight, jump, and first-person ship-interior systems.
@@ -82,7 +82,7 @@ seo:
 
 Far Haul is an open-world sci-fi freight and exploration project with a playable standalone Windows prototype. The earlier browser build has been retired so development can focus on desktop quality, performance, presentation, and the physical game world.
 
-The current v0.2.0 prototype lets you build a modular ship on a 3 m grid, check its engineering, and use undo, redo, and autosave. Freight contracts and a simulated economy give the ship work to do. You can fly local routes, dock, make FTL jumps, leave the helm to walk through the ship, land on moons, explore and work on foot, visit surface sites, and walk through ports, habs, and camp facilities.
+The current v0.3.0 prototype lets you build a modular ship on a 3 m grid, check its engineering, and use undo, redo, and autosave. Freight contracts and a simulated economy give the ship work to do. Version 0.3.0 brings recognizable planetary scenery, new freight ports at Venus, Jupiter and Saturn, and distinct destination environments across known space. You can fly local routes, dock, make FTL jumps, leave the helm to walk through the ship, land on moons, explore and work on foot, visit surface sites, and walk through ports, habs, and camp facilities.
 
 The larger vision is a first-person interstellar freight and exploration game. Walking through ships, moon landing, surface exploration, suit systems, and surface work now have playable implementations. EVA ship repair and the broader frontier experience remain directions beyond the current prototype.
 
@@ -92,6 +92,6 @@ Freight gives the journey a purpose. The planned experience follows charted frei
 
 Ships are physical places you can begin to walk through in the current prototype, built from modular parts with a boxy, utilitarian, function-over-form character. The direction includes landing on planets, exploring their surfaces, and stepping outside for EVA repairs—not just watching the journey from a cockpit.
 
-Planetary, EVA, and deeper frontier experiences remain plans for the broader game rather than an implemented-feature checklist for today's demo. A commercial, installable release may be part of the future, but there is no current storefront, announced price, or promise of a release date.
+Atmospheric planets, EVA ship repair, crew systems, and deeper frontier experiences remain plans for the broader game rather than an implemented-feature checklist for today's demo. A commercial, installable release may be part of the future, but there is no current storefront, announced price, or promise of a release date.
 
 The hero and gallery images on this page are project-owned screenshots from the Far Haul site, reproduced with the studio owner's permission. The original abstract concept fallback remains available locally, but is not presented as gameplay.
