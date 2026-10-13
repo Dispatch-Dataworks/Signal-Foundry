@@ -12,7 +12,7 @@ tags: [exploration, science-fiction, simulation]
 genres: [Freight simulation, Exploration]
 platforms: [Windows]
 developer: Signal Foundry Games
-version: v0.1.0
+version: v0.2.0
 engine: Godot
 technologies: [Godot, GDScript]
 hero:
@@ -82,7 +82,7 @@ seo:
 
 Far Haul is an open-world sci-fi freight and exploration project with a playable standalone Windows prototype. The earlier browser build has been retired so development can focus on desktop quality, performance, presentation, and the physical game world.
 
-The current v0.1.0 prototype lets you build a modular ship on a 3 m grid, check its engineering, and use undo, redo, and autosave. Freight contracts and a simulated economy give the ship work to do. You can fly local routes, dock, make FTL jumps, leave the helm to walk through the ship, land on moons, explore and work on foot, visit surface sites, and walk through ports, habs, and camp facilities.
+The current v0.2.0 prototype lets you build a modular ship on a 3 m grid, check its engineering, and use undo, redo, and autosave. Freight contracts and a simulated economy give the ship work to do. You can fly local routes, dock, make FTL jumps, leave the helm to walk through the ship, land on moons, explore and work on foot, visit surface sites, and walk through ports, habs, and camp facilities.
 
 The larger vision is a first-person interstellar freight and exploration game. Walking through ships, moon landing, surface exploration, suit systems, and surface work now have playable implementations. EVA ship repair and the broader frontier experience remain directions beyond the current prototype.
 
