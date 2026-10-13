@@ -12,7 +12,7 @@ tags: [exploration, science-fiction, simulation]
 genres: [Freight simulation, Exploration]
 platforms: [Windows]
 developer: Signal Foundry Games
-version: v0.3.0
+version: v0.5.0
 engine: Godot
 technologies: [Godot, GDScript]
 hero:
@@ -57,16 +57,16 @@ gallery:
     order: 3
 requirements:
   minimum:
-    input: Mouse and keyboard; touch controls are not implemented.
-    network: No network connection is required to run the downloaded Windows build.
+    input: Mouse and keyboard for the Windows game; optional phone or tablet browser controls via Ship Remote on the local network.
+    network: No network connection is required for standalone play; optional Ship Remote uses a local network connection and six-digit pairing.
     notes: Download the Windows ZIP, extract it, and run FarHaul.exe. Saves are stored in a Far Haul saves folder next to the executable; earlier saves remain compatible.
 milestones:
   - category: Completed
     title: Playable proof of concept
     description: A playable starting point for the freight and exploration idea.
   - category: Current
-    title: Windows prototype v0.3.0 released
-    description: Version 0.3.0 adds recognizable Earth, Luna and Mars, new Venus, Jupiter and Saturn freight destinations, distinctive worlds throughout known space, destination-specific arrival scenery, and hull enclosure fixes. Existing modular shipbuilding, flight, docking, FTL travel, moon landings and first-person exploration remain playable.
+    title: Windows prototype v0.5.0 released
+    description: Version 0.5.0 adds an optional local-network Ship Remote with phone and tablet flight instruments and controls. Version 0.4.0 introduced system and known-space charts, trade routes and arrival estimates. Planetary scenery, freight destinations, modular shipbuilding, flight, docking and exploration remain available.
   - category: Planned
     title: A broader interstellar freight and exploration experience
     description: Frontier exploration, planetary landing, and EVA repair remain design directions beyond the implemented freight, flight, jump, and first-person ship-interior systems.
@@ -82,7 +82,7 @@ seo:
 
 Far Haul is an open-world sci-fi freight and exploration project with a playable standalone Windows prototype. The earlier browser build has been retired so development can focus on desktop quality, performance, presentation, and the physical game world.
 
-The current v0.3.0 prototype lets you build a modular ship on a 3 m grid, check its engineering, and use undo, redo, and autosave. Freight contracts and a simulated economy give the ship work to do. Version 0.3.0 brings recognizable planetary scenery, new freight ports at Venus, Jupiter and Saturn, and distinct destination environments across known space. You can fly local routes, dock, make FTL jumps, leave the helm to walk through the ship, land on moons, explore and work on foot, visit surface sites, and walk through ports, habs, and camp facilities.
+The current v0.5.0 prototype lets you build a modular ship on a 3 m grid, check its engineering, and use undo, redo, and autosave. Freight contracts and a simulated economy give the ship work to do. Recent updates bring recognizable planetary scenery, new freight ports at Venus, Jupiter and Saturn, and distinct destination environments across known space. Version 0.4.0 added interactive maps of individual systems and known-space trade routes, while 0.5.0 adds an optional local-network Ship Remote for viewing flight instruments and issuing supported helm commands from a phone or tablet. You can fly local routes, dock, make FTL jumps, leave the helm to walk through the ship, land on moons, explore and work on foot, visit surface sites, and walk through ports, habs, and camp facilities.
 
 The larger vision is a first-person interstellar freight and exploration game. Walking through ships, moon landing, surface exploration, suit systems, and surface work now have playable implementations. EVA ship repair and the broader frontier experience remain directions beyond the current prototype.
 
