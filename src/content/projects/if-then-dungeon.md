@@ -1,9 +1,9 @@
 ---
 title: If Then Dungeon
 slug: if-then-dungeon
-excerpt: A planned dungeon adventure for exploring programming ideas with younger players. Still on the workbench; there is no playable demo.
-collection: workshop
-status: Concept
+excerpt: A playable browser dungeon adventure where players program heroes using IF/THEN rule cards. Early tests show the learning curve still needs work.
+collection: games
+status: Playable Demo
 order: 4
 tags: [learning, programming, decision-making]
 genres: [Educational, Dungeon adventure]
@@ -31,46 +31,54 @@ gallery:
     caption: Additional visual exploration from the project's concept phase.
     type: concept
     order: 2
+actions:
+  - label: Play Demo
+    url: https://dispatch-dataworks.github.io/if-then-dungeon/
+    kind: play
+    priority: 0
+  - label: View source on GitHub
+    url: https://github.com/Dispatch-Dataworks/if-then-dungeon
+    kind: github
 milestones:
+  - category: Completed
+    title: Playable browser demo
+    description: Rule-card programming, deterministic dungeon turns, heroes, enemies, traps, Pressure, and a multi-level campaign are implemented.
   - category: Current
-    title: Working through the concept
-  - category: Planned
+    title: Improve onboarding and difficulty
+    description: Early testers find the game hard; teaching, pacing, instructions, and balance need further work.
+  - category: Completed
     title: Card-built rule rows in a logic-first grid dungeon
-    description: Program the hero using Sensors, Actions, and Operators, with IF/THEN/ELSE and Boolean logic. All mechanics are planned; no playable demo is available.
-  - category: Planned
+    description: Program the hero using Sensors, Actions, and Operators, with IF/THEN/ELSE and Boolean logic. Build playable IF/THEN/ELSE rows using Sensors, Actions, and Operators.
+  - category: Completed
     title: Tick-based learning and debugging loops
     description: Explore loops, operator precedence, edge cases, and deterministic retries through monsters, hazards, and upgrades.
-  - category: Planned
+  - category: Completed
     title: Pressure from unused cards
-    description: Unused cards are intended to create Pressure and spawn enemies; enemy behavior is intended to be deterministic with controlled randomness.
-  - category: Someday / Exploring
-    title: Campaign structure, themes, and replayability
-    description: These are intended directions. Specific campaign themes are not available to verify and are not named here.
+    description: Unused cards create Pressure and spawn enemies, making hand management part of each turn.
+  - category: Current
+    title: Campaign, visual art, and replayability
+    description: A 24-level campaign across eight themes is implemented, while artwork and balance continue to evolve.
 seo:
-  description: If Then Dungeon is a workshop concept for a programming-inspired dungeon adventure for younger players.
+  description: Play the If Then Dungeon browser demo, a programming-inspired dungeon adventure with rule cards, heroes, monsters, and puzzles.
   image: /assets/projects/if-then-dungeon/cover.png
 ---
 
 ## Overview
 
-If Then Dungeon is a concept on the workshop bench: a logic-first, grid-based dungeon adventure that helps younger players explore programming ideas through play.
+If Then Dungeon is now a **playable browser demo**. Players program a hero by building IF / THEN / ELSE rule rows from Sensor, Action, and Operator cards, then roll and watch those rules play out on a dungeon grid.
 
-There is no playable demo. The features and experience described here are planned design, not an account of an existing game.
+The prototype has progressed well beyond the original concept: a 24-level campaign across eight themes, multiple heroes and enemies, traps, obstacles, upgrades, deterministic retries, and the Pressure system are implemented. Artwork is also progressing, including animated character cards and alternate hero appearances.
 
-## Why We Made This
+## Learning Through Play
 
-We are interested in games that make thinking part of the fun. This concept asks what a dungeon adventure might look like if programming ideas were part of the adventure itself.
+The idea is still to make Boolean logic, debugging, and edge cases feel like part of a dungeon adventure rather than a separate lesson. Each turn offers card exchanges and rule-building choices. Unused cards add Pressure, which can spawn additional enemies. When a plan fails, the player can inspect what happened and adjust the rules.
 
-## What Makes It Different
+## The Hard Part Is Making It Learnable
 
-The planned core is to **program the hero with card-built rule rows**. Sensors, Actions, and Operators would let players assemble IF/THEN/ELSE behavior without a heavy syntax burden. NOT, AND, OR, and operator precedence are intended to make Boolean logic something players can experiment with inside the dungeon.
+**Early testers report that the game is difficult.** That is important feedback, particularly for a game intended to introduce programming ideas to younger players. The team has already added beginner-oriented cards, a Test run preview, and a calmer opening level, but the instructions, learning curve, and balance need more work. A simulation bot and balance reports help identify trouble spots; they are not substitutes for watching real players learn.
 
-Loops and ticks would provide the rhythm of the simulation. The design calls for deterministic enemy behavior with controlled randomness, so retries can support learning: inspect what happened, debug a rule, account for an edge case, and try again. Unused cards are intended to create **Pressure**, spawning enemies and making the choice of what to use part of the challenge.
+The intended audience remains roughly ages 10–15, an informal design target rather than a formal age rating. The game is playable now, but it is still an early demo undergoing tuning.
 
-Monsters, hazards, upgrades, and replayability are planned parts of the game—not decorations for classroom software. The intent is game-first: conditional reasoning, Boolean logic, debugging, and edge cases become tools for playing, rather than a separate lesson bolted onto the adventure.
+**[Play the If Then Dungeon demo](https://dispatch-dataworks.github.io/if-then-dungeon/)**
 
-The intended audience is roughly ages 10–15. That is an informal design target, not a formal age rating or a claim of classroom testing. A campaign and themes are intended, but specific campaign themes cannot currently be verified and are not named here.
-
-**Every mechanic above is planned design, not an implemented feature. There is no playable demo.** The workshop is the right place for this idea while the design takes shape. If it becomes playable, this same project record can move to the games collection without losing its identity.
-
-The illustration on this page is an original concept placeholder—not a screenshot or final game logo.
+The images shown here are concept artwork, not screenshots of the current build.
